@@ -105,5 +105,5 @@ theme: hexo-theme-claudia
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Conor-Jin/conor.github.io.git
+  repo: https://github.com/Conor-Jin/Conor-Jin.github.io.git
   branch: master
