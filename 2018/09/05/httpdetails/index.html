@@ -14,7 +14,7 @@ http传输过程详解：当我们发送一个ajax请求，或者地址栏输入
 <p>?name=yuchao&amp;age=26：发送给服务器数据</p>
 <p>#modfiled：锚点</p>
 <p>http消息结构：<br>整个http消息结构分为request以及response两部分：为了便于讲解，我从w3c截取一个图如下：</p>
-<p><img src="/images/httpdetails/20131226161724328.png" alt="xxx"></p>
+<p><img src="/images/httpdetails/20131226161724328.png"></p>
 <p>这是从chrome的Network截图，且不管每个浏览器将其如何区分，按照我们看到的来分组：</p>
 <p>上面第一部分是请求资源地址以及请求方式属于request部分</p>
 <p>第二部分是返回状态码，属于response部分</p>
@@ -59,7 +59,7 @@ http传输过程详解：当我们发送一个ajax请求，或者地址栏输入
 <p>404：请求资源不存在；</p>
 <p>500 Internal Server Error 服务器发生了不可预期的错误503 Server Unavailable 服务器当前不能处理客户端的请求，一段时间后可能恢复正常</p>
 <p>Keep-Alive:长连接设置的值，如下图截图：</p>
-<p><img src="/images/httpdetails/20131227131225609.jpg" alt="xxx"></p>
+<p><img src="/images/httpdetails/20131227131225609.jpg"></p>
 <p>有两个值：timeout以及max，例如：Keep-Alive:timeout=5,max=100，只有当connection为keep-alive并且服务端支持时候才会生效。</p>
 <p>其中timeout表示超时时间，max表示最大连接数。即：在5秒之内服务器始终保持空闲连接，在这五秒之内可以发送请求不必重新建立连接，超过这个时间则会重新建立连接进行请求。</p>
 <p>在保持持久连接之间每发送一个请求max值就会减少一个，直到为0为止则会自动断开连接。</p>
@@ -67,7 +67,7 @@ http传输过程详解：当我们发送一个ajax请求，或者地址栏输入
 <p>这样设计初衷就是为了既能减少不必要的tcp连接，又能避免频繁的请求造成服务器连接池冗余。</p>
 <p>这个值从根本上来说跟前端没有太多关系，但是在网站性能优化很是关键。选择多次建立tcp连接还是选择空余一段时间请求被浪费，就要看实际需求以及能否设置出一个合理的Keep-Alive值</p>
 <p>Conent-Length：表示返回实体内容长度大小，一般应用在返回静态页面或者一张图片并且数据量不大时候被设置；大小为bite字节；例如一张图片的请求：Connent-Length：630；请求一个图片截图如下：</p>
-<p><img src="/images/httpdetails/20131227131410171.jpg" alt="xxx"></p>
+<p><img src="/images/httpdetails/20131227131410171.jpg"></p>
 <p>Transfer-Encoding：即服务器端不是一个已知的固定的返回实体时候，服务器会一边产生数据，一边发送给客户端，</p>
 <p>这时候服务器就需要用Transfer-Encoding：chunked分块编码来代替Conent-Length，设置该key后Content-Length就失效了。</p>
 <p>对于前段来说只需关心返回的状态是否是成功即可，但是对于后台需要用到这个设置来判断客户端是否接受完全部数据。详细请参考</p>
