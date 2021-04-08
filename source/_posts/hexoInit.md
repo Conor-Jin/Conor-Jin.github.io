@@ -5,7 +5,7 @@ tags:
 - 网络
 ---
 
-node.js git github  等相关不做表述
+## node.js git github  等相关不做表述
 
 1.全局安装 hexo.js
 

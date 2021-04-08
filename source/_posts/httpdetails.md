@@ -39,7 +39,7 @@ www.jindk.wang：表示服务器域名（或者是ip地址）
 http消息结构：
 整个http消息结构分为request以及response两部分：为了便于讲解，我从w3c截取一个图如下：
 
-![xxx](/images/httpdetails/20131226161724328.png)
+![](/images/httpdetails/20131226161724328.png)
 
 这是从chrome的Network截图，且不管每个浏览器将其如何区分，按照我们看到的来分组：
 
@@ -133,7 +133,7 @@ HTTP/1.1中定义了5类状态码， 状态码由三位数字组成，第一个�
 
 Keep-Alive:长连接设置的值，如下图截图：
 
-![xxx](/images/httpdetails/20131227131225609.jpg)
+![](/images/httpdetails/20131227131225609.jpg)
 
 有两个值：timeout以及max，例如：Keep-Alive:timeout=5,max=100，只有当connection为keep-alive并且服务端支持时候才会生效。
 
@@ -149,7 +149,7 @@ Keep-Alive:长连接设置的值，如下图截图：
 
 Conent-Length：表示返回实体内容长度大小，一般应用在返回静态页面或者一张图片并且数据量不大时候被设置；大小为bite字节；例如一张图片的请求：Connent-Length：630；请求一个图片截图如下：
 
-![xxx](/images/httpdetails/20131227131410171.jpg)
+![](/images/httpdetails/20131227131410171.jpg)
 
 
 Transfer-Encoding：即服务器端不是一个已知的固定的返回实体时候，服务器会一边产生数据，一边发送给客户端，
