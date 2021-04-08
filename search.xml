@@ -8,7 +8,7 @@
       <link href="2021/04/08/hexoInit/"/>
       <url>2021/04/08/hexoInit/</url>
       
-        <content type="html"><![CDATA[<p>node.js git github  等相关不做表述</p><p>1.全局安装 hexo.js</p><p>npm install -g hexo-cli</p><p>2.检测hexo</p><p>hexo -v</p><p>3.项目初始化</p><p>hexo init [myblog]</p><p>cd [myblog]</p><p>4.安装依赖</p><p>npm i</p><p>5.下载第三方主题</p><p>hexo-theme-Claudia</p><p><a href="https://github.com/Haojen/hexo-theme-Claudia">https://github.com/Haojen/hexo-theme-Claudia</a></p><p>6.配置第三方</p><p>把下载好的解压文件夹放置到 themes 目录下</p><p>同时修改 根目录 _config.yml 的配置文件<br>theme 修改为下载的第三方主题</p><p>7.第三方主题配置不表</p><p>8.常用命令</p><p>启动本地服务器<br>hexo s</p><p>清除缓存文件 db.json 和已生成的静态文件 publi<br>hexo clean</p><p>生成网站静态文件到默认设置的 public 文件夹<br>hexo generate</p><p>上传至github gitee等<br>hexo deployd</p><p>一般简写<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="node-js-git-github-等相关不做表述"><a href="#node-js-git-github-等相关不做表述" class="headerlink" title="node.js git github  等相关不做表述"></a>node.js git github  等相关不做表述</h2><p>1.全局安装 hexo.js</p><p>npm install -g hexo-cli</p><p>2.检测hexo</p><p>hexo -v</p><p>3.项目初始化</p><p>hexo init [myblog]</p><p>cd [myblog]</p><p>4.安装依赖</p><p>npm i</p><p>5.下载第三方主题</p><p>hexo-theme-Claudia</p><p><a href="https://github.com/Haojen/hexo-theme-Claudia">https://github.com/Haojen/hexo-theme-Claudia</a></p><p>6.配置第三方</p><p>把下载好的解压文件夹放置到 themes 目录下</p><p>同时修改 根目录 _config.yml 的配置文件<br>theme 修改为下载的第三方主题</p><p>7.第三方主题配置不表</p><p>8.常用命令</p><p>启动本地服务器<br>hexo s</p><p>清除缓存文件 db.json 和已生成的静态文件 publi<br>hexo clean</p><p>生成网站静态文件到默认设置的 public 文件夹<br>hexo generate</p><p>上传至github gitee等<br>hexo deployd</p><p>一般简写<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p>]]></content>
       
       
       
