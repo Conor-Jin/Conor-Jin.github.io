@@ -1,0 +1,52 @@
+<!DOCTYPE html><html class="appearance-auto" lang="zh-CN"><head><meta charset="UTF-8"><title>mac os终端常用命令记录</title><meta name="description" content="~ ~ ~"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.png"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="1.终端中删除非空文件夹rm -r -f filename
+或者使用管理员账号
+sudo rm -r -f filename
+ 
+2.终端进入 vimvim xx.xx/vi xx.xx
+亦或者使用管理员账号
+sudo vim xx.xx/vi xx.xx
+ 
+3.终端退出 vim按下ESC后输出，才能进入命令模式 保存并退出
+:qw!
+不保存退出
+:q
+注： 命令后面 + ! 是强制的意思
+4.终端中解压命令tar （注：tar是打包，不是压缩！）解包：tar xvf FileName.tar打包：tar cvf FileName.tar DirName
+.gz解压1：gunzip FileName.gz解压2：gzip -d FileName.gz压缩：gzip FileName
+.tar.gz 和 ..."><meta name="generator" content="Hexo 5.4.0"></head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Conor.Jin's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">mac os终端常用命令记录</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">点击返回顶部</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BB%88%E7%AB%AF%E4%B8%AD%E5%88%A0%E9%99%A4%E9%9D%9E%E7%A9%BA%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">1.终端中删除非空文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%88%E7%AB%AF%E8%BF%9B%E5%85%A5-vim"><span class="toc-text">2.终端进入 vim</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BB%88%E7%AB%AF%E9%80%80%E5%87%BA-vim"><span class="toc-text">3.终端退出 vim</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BB%88%E7%AB%AF%E4%B8%AD%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4"><span class="toc-text">4.终端中解压命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tar-%EF%BC%88%E6%B3%A8%EF%BC%9Atar%E6%98%AF%E6%89%93%E5%8C%85%EF%BC%8C%E4%B8%8D%E6%98%AF%E5%8E%8B%E7%BC%A9%EF%BC%81%EF%BC%89"><span class="toc-text">tar （注：tar是打包，不是压缩！）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gz"><span class="toc-text">.gz</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar-gz-%E5%92%8C-tgz"><span class="toc-text">.tar.gz 和 .tgz</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bz2"><span class="toc-text">.bz2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar-bz2"><span class="toc-text">.tar.bz2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bz"><span class="toc-text">.bz</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar-bz"><span class="toc-text">.tar.bz</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Z"><span class="toc-text">.Z</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar-Z"><span class="toc-text">.tar.Z</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zip"><span class="toc-text">.zip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lha"><span class="toc-text">.lha</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rpm"><span class="toc-text">.rpm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deb"><span class="toc-text">.deb</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">mac os终端常用命令记录</h1><time class="has-text-grey" datetime="2018-11-17T05:21:03.000Z">2018-11-17</time><article class="mt-2 post-content"><h2 id="1-终端中删除非空文件夹"><a href="#1-终端中删除非空文件夹" class="headerlink" title="1.终端中删除非空文件夹"></a>1.终端中删除非空文件夹</h2><p>rm -r -f filename</p>
+<p>或者使用管理员账号</p>
+<p>sudo rm -r -f filename</p>
+<p> </p>
+<h2 id="2-终端进入-vim"><a href="#2-终端进入-vim" class="headerlink" title="2.终端进入 vim"></a>2.终端进入 vim</h2><p>vim xx.xx/vi xx.xx</p>
+<p>亦或者使用管理员账号</p>
+<p>sudo vim xx.xx/vi xx.xx</p>
+<p> </p>
+<h2 id="3-终端退出-vim"><a href="#3-终端退出-vim" class="headerlink" title="3.终端退出 vim"></a>3.终端退出 vim</h2><p>按下ESC后输出，才能进入命令模式 保存并退出</p>
+<p>:qw!</p>
+<p>不保存退出</p>
+<p>:q</p>
+<p>注： 命令后面 + ! 是强制的意思</p>
+<h2 id="4-终端中解压命令"><a href="#4-终端中解压命令" class="headerlink" title="4.终端中解压命令"></a>4.终端中解压命令</h2><h3 id="tar-（注：tar是打包，不是压缩！）"><a href="#tar-（注：tar是打包，不是压缩！）" class="headerlink" title="tar （注：tar是打包，不是压缩！）"></a>tar （注：tar是打包，不是压缩！）</h3><p>解包：tar xvf FileName.tar<br>打包：tar cvf FileName.tar DirName</p>
+<h3 id="gz"><a href="#gz" class="headerlink" title=".gz"></a>.gz</h3><p>解压1：gunzip FileName.gz<br>解压2：gzip -d FileName.gz<br>压缩：gzip FileName</p>
+<h3 id="tar-gz-和-tgz"><a href="#tar-gz-和-tgz" class="headerlink" title=".tar.gz 和 .tgz"></a>.tar.gz 和 .tgz</h3><p>解压：tar zxvf FileName.tar.gz<br>压缩：tar zcvf FileName.tar.gz DirName</p>
+<h3 id="bz2"><a href="#bz2" class="headerlink" title=".bz2"></a>.bz2</h3><p>解压1：bzip2 -d FileName.bz2<br>解压2：bunzip2 FileName.bz2<br>压缩： bzip2 -z FileName</p>
+<p> </p>
+<h3 id="tar-bz2"><a href="#tar-bz2" class="headerlink" title=".tar.bz2"></a>.tar.bz2</h3><p>解压：tar jxvf FileName.tar.bz2<br>压缩：tar jcvf FileName.tar.bz2 DirName</p>
+<p> </p>
+<h3 id="bz"><a href="#bz" class="headerlink" title=".bz"></a>.bz</h3><p>解压1：bzip2 -d FileName.bz<br>解压2：bunzip2 FileName.bz</p>
+<p> </p>
+<h3 id="tar-bz"><a href="#tar-bz" class="headerlink" title=".tar.bz"></a>.tar.bz</h3><p>解压：tar jxvf FileName.tar.bz</p>
+<p> </p>
+<h3 id="Z"><a href="#Z" class="headerlink" title=".Z"></a>.Z</h3><p>解压：uncompress FileName.Z<br>压缩：compress FileName</p>
+<p> </p>
+<h3 id="tar-Z"><a href="#tar-Z" class="headerlink" title=".tar.Z"></a>.tar.Z</h3><p>解压：tar Zxvf FileName.tar.Z<br>压缩：tar Zcvf FileName.tar.Z DirName</p>
+<p> </p>
+<h3 id="zip"><a href="#zip" class="headerlink" title=".zip"></a>.zip</h3><p>解压：unzip FileName.zip<br>压缩：zip FileName.zip DirName</p>
+<p> </p>
+<h3 id="lha"><a href="#lha" class="headerlink" title=".lha"></a>.lha</h3><p>解压：lha -e FileName.lha<br>压缩：lha -a FileName.lha FileName</p>
+<p> </p>
+<h3 id="rpm"><a href="#rpm" class="headerlink" title=".rpm"></a>.rpm</h3><p>解包：rpm2cpio FileName.rpm  cpio -div</p>
+<p> </p>
+<h3 id="deb"><a href="#deb" class="headerlink" title=".deb"></a>.deb</h3><p>解包：ar p FileName.deb data.tar.gz  tar zxf -</p>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2018/11/17/macphpmamp/" title="切换Mac默认PHP版本为MAMP"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">上一页: 切换Mac默认PHP版本为MAMP</span></a><a class="button is-default" href="/2018/10/12/gitreporterrors/" title="git报错记录"><span class="has-text-weight-semibold">下一页: git报错记录</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Conor-Jin"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--></section><p><span>Copyright ©</span><span> Conor.Jin 2021</span></p></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/post.js"></script></body></html>

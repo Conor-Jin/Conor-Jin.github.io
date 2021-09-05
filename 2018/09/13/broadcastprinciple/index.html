@@ -1,0 +1,81 @@
+<!DOCTYPE html><html class="appearance-auto" lang="zh-CN"><head><meta charset="UTF-8"><title>轮播图实现原理</title><meta name="description" content="~ ~ ~"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.png"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="轮播图可以说是最平常最基础不过的东西了，不论是web还是App方面，我本人也是拿来主义，是时候改变了，水平有限，总结出两种方案。 PS: 方案都很简陋，没有左右键切换，也没有下面表示进行的小圆点，只记录原理。 一.  通过display 控制 所谓轮播图就是将要展示的图片做好队列，但是窗口有限，一次只能展示一个图片，那么如果说通过display 设置 当前要展示的图片为 “block”，其他不展示的图片为 “none”，应该就解决这个问题了。 HTML代码：
+&amp;lt;div class=&amp;quot;main&amp;quot; id=&amp;quot;main&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;banner&amp;quot; id=&amp;quot;banner&amp;quot;&amp;gt;
+        .."><meta name="generator" content="Hexo 5.4.0"></head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Conor.Jin's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">轮播图实现原理</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">点击返回顶部</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile is-hidden"></div><div class="column is-9"><header class="my-4"></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">轮播图实现原理</h1><time class="has-text-grey" datetime="2018-09-13T07:44:57.000Z">2018-09-13</time><article class="mt-2 post-content"><p>轮播图可以说是最平常最基础不过的东西了，不论是web还是App方面，我本人也是拿来主义，是时候改变了，水平有限，总结出两种方案。 PS: 方案都很简陋，没有左右键切换，也没有下面表示进行的小圆点，只记录原理。 一.  通过display 控制 所谓轮播图就是将要展示的图片做好队列，但是窗口有限，一次只能展示一个图片，那么如果说通过display 设置 当前要展示的图片为 “block”，其他不展示的图片为 “none”，应该就解决这个问题了。 HTML代码：</p>
+<pre><code>&lt;div class=&quot;main&quot; id=&quot;main&quot;&gt;
+    &lt;div class=&quot;banner&quot; id=&quot;banner&quot;&gt;
+        &lt;img src=&quot;./images/1.png&quot; alt=&quot;&quot; class=&quot;banner-slide&quot;&gt;
+        &lt;img src=&quot;./images/2.png&quot; alt=&quot;&quot; class=&quot;banner-slide&quot;&gt;
+        &lt;img src=&quot;./images/3.png&quot; alt=&quot;&quot; class=&quot;banner-slide&quot;&gt;
+        &lt;img src=&quot;./images/4.png&quot; alt=&quot;&quot; class=&quot;banner-slide&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>  CSS代码：  </p>
+<pre><code>    .main &#123;
+        width: 1200px;
+        height: auto;
+        margin: 50px auto;
+    &#125;
+
+    .banner &#123;
+        width: 600px;
+        height: 460px;
+        overflow: hidden;
+    &#125;
+
+    .banner-slide &#123;
+        width: 600px;
+        height: 460px;
+    &#125;
+</code></pre>
+<p>  JS代码：</p>
+<pre><code>    window.onload = function () &#123;
+        // 设置定时器
+        var timer = null;
+        // 设置 要优先显示 图片位置
+        var index = 0;
+        // 存储在内存中
+        var pics = document.getElementsByClassName(&quot;banner-slide&quot;);
+
+        function slideImg() &#123;
+            var main = document.getElementById(&quot;main&quot;);
+            var banner = document.getElementById(&quot;banner&quot;);
+            // 根据鼠标事件来 设置显示与否
+            main.onmouseover = function () &#123;
+                stopAutoPlay();
+            &#125;
+            main.onmouseout = function () &#123;
+                startAutoPlay();
+            &#125;
+            main.onmouseout();
+        &#125;
+        //开始播放轮播图
+        function startAutoPlay() &#123;
+            timer = setInterval(function () &#123;
+                index++;
+                if (index &gt; 3) &#123;
+                    index = 0;
+                &#125;
+                changeImg();
+            &#125;, 2000);
+        &#125;
+        //暂停播放
+        function stopAutoPlay() &#123;
+            if (timer) &#123;
+                clearInterval(timer);
+            &#125;
+        &#125;
+        //改变轮播图
+        function changeImg() &#123;
+            for (var i = 0; i &lt; pics.length; i++) &#123;
+                pics\[i\].style.display = &quot;none&quot;;
+            &#125;
+            pics\[index\].style.display = &quot;block&quot;;
+        &#125;
+        slideImg();
+
+    &#125;
+</code></pre>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2018/10/02/mvc-mvp-mvvm/" title="简单说明MVC/MVP/MVVM"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">上一页: 简单说明MVC/MVP/MVVM</span></a><a class="button is-default" href="/2018/09/11/plugin/" title="Js插件封装"><span class="has-text-weight-semibold">下一页: Js插件封装</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Conor-Jin"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--></section><p><span>Copyright ©</span><span> Conor.Jin 2021</span></p></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/post.js"></script></body></html>

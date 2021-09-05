@@ -1,0 +1,29 @@
+<!DOCTYPE html><html class="appearance-auto" lang="zh-CN"><head><meta charset="UTF-8"><title>mac mysql设置</title><meta name="description" content="~ ~ ~"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.png"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="1，安装不表   2.mysql设置软链接
+cd /usr/local/bin/
+ln -s /usr/local/mysql/bin/mysql /usr/local/bin/
+  3.验证
+mysql –version
+mysql  Ver 8.0.20 for macos10.15 on x86_64 (MySQL Community Server - GPL)
+看到以上即安装成功   4.登录mysql
+mysql -u root -p
+  5.退出MySQL exit 或者 quit   6.其他常用命令
+创建数据库：create database test;
+查询数据库:  show databases;
+选择数据库：use test;
+删除数据库:  drop database test;
+ .."><meta name="generator" content="Hexo 5.4.0"></head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Conor.Jin's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">mac mysql设置</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">点击返回顶部</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile is-hidden"></div><div class="column is-9"><header class="my-4"></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">mac mysql设置</h1><time class="has-text-grey" datetime="2020-06-12T07:51:57.000Z">2020-06-12</time><article class="mt-2 post-content"><p>1，安装不表   2.mysql设置软链接</p>
+<p>cd /usr/local/bin/</p>
+<p>ln -s /usr/local/mysql/bin/mysql /usr/local/bin/</p>
+<p>  3.验证</p>
+<p>mysql –version</p>
+<p>mysql  Ver 8.0.20 for macos10.15 on x86_64 (MySQL Community Server - GPL)</p>
+<p>看到以上即安装成功   4.登录mysql</p>
+<p>mysql -u root -p</p>
+<p>  5.退出MySQL <code>exit</code> 或者 <code>quit</code>   6.其他常用命令</p>
+<p>创建数据库：create database test;</p>
+<p>查询数据库:  show databases;</p>
+<p>选择数据库：use test;</p>
+<p>删除数据库:  drop database test;</p>
+<p>  7.Sequel pro 始终出于loading状态，无法切换到数据库 <a target="_blank" rel="noopener" href="https://sequelpro.com/test-builds">https://sequelpro.com/test-builds</a>, 升级版本sequelpro，先使用测试版 <a target="_blank" rel="noopener" href="https://github.com/sequelpro/sequelpro/issues/2699">https://github.com/sequelpro/sequelpro/issues/2699</a> 报错原因。 mysql8.0升级后造成的</p>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2020/06/12/nvm-setup/" title="nvm 配置"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">上一页: nvm 配置</span></a><a class="button is-default" href="/2020/06/06/commands/" title="常用命令"><span class="has-text-weight-semibold">下一页: 常用命令</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Conor-Jin"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--></section><p><span>Copyright ©</span><span> Conor.Jin 2021</span></p></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/post.js"></script></body></html>

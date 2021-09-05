@@ -1,0 +1,62 @@
+<!DOCTYPE html><html class="appearance-auto" lang="zh-CN"><head><meta charset="UTF-8"><title>Conor.Jin's blog</title><meta name="description" content="~ ~ ~"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.png"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/widget-post-list.css"><meta name="generator" content="Hexo 5.4.0"></head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Conor.Jin's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>分类 · mac</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><h2 class="mt-4 mb-0 is-family-serif"><a href="/2020/06/12/nvm-setup/">nvm 配置</a></h2><time class="has-text-grey" datetime="2020-06-12T08:27:55.000Z">2020-06-12</time><p class="is-flex-grow-2 mt-2">1.前言 为了解决node各种版本存在不兼容现象，nvm是让你在同一台机器上安装和切换不同版本的node的工具   2.安装
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh  bash
+配置变量，打开文件
+vim ~/.bashrc
+添加
+export NVM_DIR=”$HOME/.nvm”[ -s “$NVM_DIR/nvm.sh” ] &amp;amp;&amp;amp; . “$NVM_DIR/nvm.sh” # This loads nvm
+生效
+source ~/.bashrc
+  3.常见命令
+nvm ls-remote 列出所有可安装的版本
+nvm install  安装指定的版本，如 nvm inst..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2020/06/12/nvm-setup/">更多</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><h2 class="mt-4 mb-0 is-family-serif"><a href="/2020/06/12/mac-mysql-setup/">mac mysql设置</a></h2><time class="has-text-grey" datetime="2020-06-12T07:51:57.000Z">2020-06-12</time><p class="is-flex-grow-2 mt-2">1，安装不表   2.mysql设置软链接
+cd /usr/local/bin/
+ln -s /usr/local/mysql/bin/mysql /usr/local/bin/
+  3.验证
+mysql –version
+mysql  Ver 8.0.20 for macos10.15 on x86_64 (MySQL Community Server - GPL)
+看到以上即安装成功   4.登录mysql
+mysql -u root -p
+  5.退出MySQL exit 或者 quit   6.其他常用命令
+创建数据库：create database test;
+查询数据库:  show databases;
+选择数据库：use test;
+删除数据库:  drop database test;
+ ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2020/06/12/mac-mysql-setup/">更多</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2260770349,1912336145&amp;fm=173&amp;app=25&amp;f=JPEG?w=640&amp;h=106" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2018/11/17/macmampredis/"><img class="post-cover-img js-img-fadeIn" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2260770349,1912336145&amp;fm=173&amp;app=25&amp;f=JPEG?w=640&amp;h=106" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><h2 class="mt-4 mb-0 is-family-serif"><a href="/2018/11/17/macmampredis/">MAC版MAMP环境下为PHP7.x安装redis扩展</a></h2><time class="has-text-grey" datetime="2018-11-17T05:38:36.000Z">2018-11-17</time><p class="is-flex-grow-2 mt-2">1.依赖安装 Homebrew（Mac 电脑中已安装了 Homebrew 包管理器的可忽略此步）如果你的 MAC 电脑未安装有 Homebrew——一个包管理器，需要先安装 Homebrew 包管理器，后面步骤中的 ./configure 命令和安装 redis 服务端的命令等需要 brew 为其安装组件。 打开 terminal，安装 Homebrew：
+/usr/bin/ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
+脚本在执行过程中会有多次暂停，并说明将它将做什么；同时也会边执行、边需要联网下载资源，下载速度不会很快（因为是国内网络访问国外站点资源），请耐心等待安装完成。 ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2018/11/17/macmampredis/">更多</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="https://upload-images.jianshu.io/upload_images/6188107-a418765145532b96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/416/format/webp" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2018/11/17/macphpmamp/"><img class="post-cover-img js-img-fadeIn" src="https://upload-images.jianshu.io/upload_images/6188107-a418765145532b96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/416/format/webp" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><h2 class="mt-4 mb-0 is-family-serif"><a href="/2018/11/17/macphpmamp/">切换Mac默认PHP版本为MAMP</a></h2><time class="has-text-grey" datetime="2018-11-17T05:28:17.000Z">2018-11-17</time><p class="is-flex-grow-2 mt-2">安装装了MAMP集成环境，打开终端输入：which php，会显示/usr/bin/php，这个就是是系统自带的PHP版本，要切换默认的PHP版本为MAMP下的PHP，需要修改系统bash_profile并执行这个shell脚本。  
+1.前期准备先查看好 MAMP 相关对应PHP版本的路径，例如
+/Applications/MAMP/bin/php/php5.5.38/
+ 
+2.修改  .bash_profilesudo vim ~/.bash_profile
+然后把以下代码添加到bash_profile脚本最后面：
+export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”
+注：路径就是MAMP 相关对应PHP版本的路径  
+3.source..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2018/11/17/macphpmamp/">更多</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><h2 class="mt-4 mb-0 is-family-serif"><a href="/2018/11/17/mac-osterminal/">mac os终端常用命令记录</a></h2><time class="has-text-grey" datetime="2018-11-17T05:21:03.000Z">2018-11-17</time><p class="is-flex-grow-2 mt-2">1.终端中删除非空文件夹rm -r -f filename
+或者使用管理员账号
+sudo rm -r -f filename
+ 
+2.终端进入 vimvim xx.xx/vi xx.xx
+亦或者使用管理员账号
+sudo vim xx.xx/vi xx.xx
+ 
+3.终端退出 vim按下ESC后输出，才能进入命令模式 保存并退出
+:qw!
+不保存退出
+:q
+注： 命令后面 + ! 是强制的意思
+4.终端中解压命令tar （注：tar是打包，不是压缩！）解包：tar xvf FileName.tar打包：tar cvf FileName.tar DirName
+.gz解压1：gunzip FileName.gz解压2：gzip -d FileName.gz压缩：gzip FileName
+.tar.gz 和 ...</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2018/11/17/mac-osterminal/">更多</a></section></article></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container categories-widget category-page"><h3>分类</h3><section><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ubuntu/">ubuntu</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8E%9F%E7%94%9FJS/">原生JS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A0%B4%E8%A7%A3/">破解</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C/">网络</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a><span class="category-list-count">1</span></li></ul></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Conor-Jin"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--></section><p><span>Copyright ©</span><span> Conor.Jin 2021</span></p></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></body></html>

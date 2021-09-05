@@ -1,0 +1,70 @@
+<!DOCTYPE html><html class="appearance-auto" lang="zh-CN"><head><meta charset="UTF-8"><title>qiankun_配置</title><meta name="description" content="~ ~ ~"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.png"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="一、基座配置 以react为基座，进行配置   1.搭建react搭建
+npx create-react-app micro-app-main
+  2.安装 qiankun
+yarn add qiankun # 或者 npm i qiankun -S
+  3.修改 src/index.js，引入qiankun，注册子应用（本示例搭建分别搭建react、vue两个子应用，提前注册）。
+import React from ‘react’;import ReactDOM from ‘react-dom’;import ‘./index.css’;import App from ‘./App’;import reportWebVitals from ‘./reportWebVitals’;
+import {regi.."><meta name="generator" content="Hexo 5.4.0"></head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Conor.Jin's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">qiankun_配置</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">点击返回顶部</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile is-hidden"></div><div class="column is-9"><header class="my-4"></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">qiankun_配置</h1><time class="has-text-grey" datetime="2020-12-15T04:27:31.000Z">2020-12-15</time><article class="mt-2 post-content"><p>一、基座配置 以react为基座，进行配置   1.搭建react搭建</p>
+<p>npx create-react-app micro-app-main</p>
+<p>  2.安装 qiankun</p>
+<p>yarn add qiankun # 或者 npm i qiankun -S</p>
+<p>  3.修改 src/index.js，引入qiankun，注册子应用（本示例搭建分别搭建react、vue两个子应用，提前注册）。</p>
+<p>import React from ‘react’;<br>import ReactDOM from ‘react-dom’;<br>import ‘./index.css’;<br>import App from ‘./App’;<br>import reportWebVitals from ‘./reportWebVitals’;</p>
+<p>import {registerMicroApps, start, initGlobalState} from ‘qiankun’   //引入qiankun</p>
+<p>// 初始化 state<br>const initialState = {<br>  user: {<br>    name: ‘zzzz’,<br>    age: 14<br>  } // 用户信息<br>};<br>const actions = initGlobalState(initialState);<br>actions.onGlobalStateChange((state, prev) =&gt; {<br>  // state: 变更后的状态; prev 变更前的状态<br>  // console.log(state, prev);<br>});<br>actions.setGlobalState(initialState);<br>actions.offGlobalStateChange();</p>
+<p>registerMicroApps(<br>  [<br>    {<br>        name:’micro-app-react’, //微应用的名称，微应用之间必须确保唯一(微应用中package.json中的name)<br>        entry:’//localhost:10100’, //微应用的entry地址<br>        container:’#frame’,//微应用的容器节点的选择器<br>        activeRule:’/react’//微应用的激活规则<br>    },<br>    {<br>        name:’micro-app-vue’, //微应用的名称，微应用之间必须确保唯一(微应用中package.json中的name)<br>        entry:’//localhost:10200’, //微应用的entry地址<br>        container:’#frame2’,//微应用的容器节点的选择器<br>        activeRule:’/vue’//微应用的激活规则<br>    }<br>  ]<br>)<br>start();</p>
+<p>ReactDOM.render(<br>  &lt;React.StrictMode&gt;<br>    <App /><br>  &lt;/React.StrictMode&gt;,<br>  document.getElementById(‘root’)<br>);</p>
+<p>// If you want to start measuring performance in your app, pass a function<br>// to log results (for example: reportWebVitals(console.log))<br>// or send to an analytics endpoint. Learn more: <a target="_blank" rel="noopener" href="https://bit.ly/CRA-vitals">https://bit.ly/CRA-vitals</a><br>reportWebVitals();</p>
+<p>  4.修改 src/App.js，根据 index.js中配置的子应用，设置子应用挂载Dom节点</p>
+<p>import ‘./App.css’;<br>function App() {<br>  return (<br>    <div className="App"><br>      <p>subapp-container</p><br>      <div id='frame' /><br>      <div id='frame2' /><br>    </div><br>  );<br>}</p>
+<p>export default App;</p>
+<p>  二、子应用配置，react   1.搭建react子应用</p>
+<p>npx create-react-app micro-app-react</p>
+<p>  2.由于使用 creact-react-app 搭建项目，webpack配置无法暴露，配置 react-app-rewired</p>
+<p>npm install react-app-rewired -D</p>
+<p>在 react-app-rewired 安装完成后，我们还需要修改 package.json 的 scripts 选项，修改为由 react-app-rewired 启动应用，就像下面这样</p>
+<p>// micro-app-react/package.json</p>
+<p>//…<br>“scripts”: {<br>  “start”: “react-app-rewired start”,<br>  “build”: “react-app-rewired build”,<br>  “test”: “react-app-rewired test”,<br>  “eject”: “react-app-rewired eject”<br>}</p>
+<p>  3.根目录下添加 .env 文件</p>
+<p># micro-app-react/.env<br>PORT=10100<br>BROWSER=none</p>
+<p>  4.修改 src/public-path.js。webpack 默认的 publicPath 为 “” 空字符串，会基于当前路径来加载资源。我们在主应用中加载微应用时需要重新设置 publicPath，这样才能正确加载微应用的相关资源</p>
+<p>if (window.__POWERED_BY_QIANKUN__) {<br>    // eslint-disable-next-line<br>    __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;<br>}</p>
+<p>  5.修改 src/index.js。导出微应用生命周期钩子函数</p>
+<p>mport React from ‘react’;<br>import ReactDOM from ‘react-dom’;<br>import “./public-path”;<br>import App from “./App.js”;</p>
+<p>if (window.__POWERED_BY_QIANKUN__) {<br>  // 动态设置 webpack publicPath，防止资源加载出错<br>  // eslint-disable-next-line no-undef<br>  __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;<br>}</p>
+<p>/**<br> * 渲染函数<br> * 两种情况：主应用生命周期钩子中运行 / 微应用单独启动时运行<br> */<br>function render() {<br>  ReactDOM.render(<App />, document.getElementById(“root”));<br>}</p>
+<p>// 独立运行时，直接挂载应用<br>if (!window.__POWERED_BY_QIANKUN__) {<br>  render();<br>}</p>
+<p>export async function bootstrap() {<br>  console.log(‘react app bootstraped’);<br>}<br>/**<br> * 应用每次进入都会调用 mount 方法，通常我们在这里触发应用的渲染方法<br> * 通常我们可以在这里做一些全局变量的初始化，比如不会在 unmount 阶段被销毁的应用级别的缓存等。<br> *<br> */<br>export async function mount(props) {<br>  console.log(props)<br>  props.onGlobalStateChange((state, prev) =&gt; {<br>    // state: 变更后的状态; prev 变更前的状态<br>    console.log(state, prev);<br>  });<br>  ReactDOM.render(<App />, props.container ? props.container.querySelector(‘#root’) : document.getElementById(‘root’));<br>}</p>
+<p>/**<br> * 应用每次 切出/卸载 会调用的方法，通常在这里我们会卸载微应用的应用实例/渲染方法<br> */<br>export async function unmount(props) {<br>  console.log(‘卸载’)<br>  ReactDOM.unmountComponentAtNode(props.container ? props.container.querySelector(‘#root’) : document.getElementById(‘root’));<br>}</p>
+<p>/**<br> * 可选生命周期钩子，仅使用 loadMicroApp 方式加载微应用时生效，通常在这里我们会卸载微应用的应用实例<br> */<br>export async function update(props) {<br>  console.log(‘update props’, props);<br>}</p>
+<p>  6.根目录创建config-overrides.js 文件。配置 webpack</p>
+<p>const path = require(“path”);</p>
+<p>module.exports = {<br>  webpack: (config) =&gt; {<br>    // 微应用的包名，这里与主应用中注册的微应用名称一致<br>    config.output.library = `micro-app-react`;<br>    // 将你的 library 暴露为所有的模块定义下都可运行的方式<br>    config.output.libraryTarget = “umd”;<br>    // 按需加载相关，设置为 webpackJsonp_VueMicroApp 即可<br>    config.output.jsonpFunction = `webpackJsonp_micro-app-react`;</p>
+<pre><code>config.resolve.alias = &#123;
+  ...config.resolve.alias,
+  &quot;@&quot;: path.resolve(\_\_dirname, &quot;src&quot;),
+&#125;;
+return config;
+</code></pre>
+<p>  },</p>
+<p>  devServer: function (configFunction) {<br>    return function (proxy, allowedHost) {<br>      const config = configFunction(proxy, allowedHost);<br>      // 关闭主机检查，使微应用可以被 fetch<br>      config.disableHostCheck = true;<br>      // 配置跨域请求头，解决开发环境的跨域问题<br>      config.headers = {<br>        “Access-Control-Allow-Origin”: “*“,<br>      };<br>      // 配置 history 模式<br>      config.historyApiFallback = true;</p>
+<pre><code>  return config;
+&#125;;
+</code></pre>
+<p>  },<br>};</p>
+<p>  三、子应用配置，vue   1.vue-cli 先创建一个 Vue 的项目</p>
+<p>vue create micro-app-vue</p>
+<p>  2.创建 src/public-path.js 文件。webpack 默认的 publicPath 为 “” 空字符串，会基于当前路径来加载资源。我们在主应用中加载微应用时需要重新设置 publicPath，这样才能正确加载微应用的相关资源</p>
+<p>if (window.__POWERED_BY_QIANKUN__) {<br>    // 动态设置 webpack publicPath，防止资源加载出错<br>    // eslint-disable-next-line no-undef<br>    __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;<br> }</p>
+<p>  3.修改 src/main.js 文件。 导出生命周期</p>
+<p>import { createApp } from ‘vue’<br>import App from ‘./App.vue’</p>
+<p>createApp(App).mount(‘#app’)</p>
+<p>/**<br> * bootstrap 只会在微应用初始化的时候调用一次，下次微应用重新进入时会直接调用 mount 钩子，不会再重复触发 bootstrap。<br> * 通常我们可以在这里做一些全局变量的初始化，比如不会在 unmount 阶段被销毁的应用级别的缓存等。<br> */<br>export async function bootstrap() {<br>  console.log(“VueMicroApp bootstraped”);<br>}</p>
+<p>/**<br> * 应用每次进入都会调用 mount 方法，通常我们在这里触发应用的渲染方法<br> */<br>export async function mount(props) {<br>  console.log(“VueMicroApp mount”, props);<br>//   render(props);<br>}</p>
+<p>/**<br> * 应用每次 切出/卸载 会调用的方法，通常在这里我们会卸载微应用的应用实例<br> */<br>export async function unmount() {<br>  console.log(“VueMicroApp unmount”);<br>//   instance.$destroy();<br>//   instance = null;<br>//   router = null;<br>}</p>
+<p>  4. 根目录 创建 vue.config.js 文件。webpack，使 main.js 导出的生命周期钩子函数可以被 qiankun 识别</p>
+<p>const path = require(“path”);</p>
+<p>module.exports = {<br>  devServer: {<br>    // 监听端口<br>    port: 10200,<br>    // 关闭主机检查，使微应用可以被 fetch<br>    disableHostCheck: true,<br>    // 配置跨域请求头，解决开发环境的跨域问题<br>    headers: {<br>      “Access-Control-Allow-Origin”: “*“,<br>    },<br>  },<br>  configureWebpack: {<br>    resolve: {<br>      alias: {<br>        “@”: path.resolve(__dirname, “src”),<br>      },<br>    },<br>    output: {<br>      // 微应用的包名，这里与主应用中注册的微应用名称一致<br>      library: “VueMicroApp”,<br>      // 将你的 library 暴露为所有的模块定义下都可运行的方式<br>      libraryTarget: “umd”,<br>      // 按需加载相关，设置为 webpackJsonp_VueMicroApp 即可<br>      jsonpFunction: `webpackJsonp_VueMicroApp`,<br>    },<br>  },<br>};</p>
+<p>  四、分别启动主应用，以及两个子应用，通过主应用的路由切换 即可看到对应配置子应用</p>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2021/04/08/hexoInit/" title="hexo初始化"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">上一页: hexo初始化</span></a><a class="button is-default" href="/2020/08/06/edgeh5/" title="Edge调试安卓手机H5页面"><span class="has-text-weight-semibold">下一页: Edge调试安卓手机H5页面</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Conor-Jin"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--></section><p><span>Copyright ©</span><span> Conor.Jin 2021</span></p></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/post.js"></script></body></html>

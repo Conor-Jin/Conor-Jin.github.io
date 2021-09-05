@@ -1,0 +1,29 @@
+<!DOCTYPE html><html class="appearance-auto" lang="zh-CN"><head><meta charset="UTF-8"><title>nvm 配置</title><meta name="description" content="~ ~ ~"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.png"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="1.前言 为了解决node各种版本存在不兼容现象，nvm是让你在同一台机器上安装和切换不同版本的node的工具   2.安装
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh  bash
+配置变量，打开文件
+vim ~/.bashrc
+添加
+export NVM_DIR=”$HOME/.nvm”[ -s “$NVM_DIR/nvm.sh” ] &amp;amp;&amp;amp; . “$NVM_DIR/nvm.sh” # This loads nvm
+生效
+source ~/.bashrc
+  3.常见命令
+nvm ls-remote 列出所有可安装的版本
+nvm install  安装指定的版本，如 nvm inst.."><meta name="generator" content="Hexo 5.4.0"></head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Conor.Jin's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">nvm 配置</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">点击返回顶部</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">首页</a></h3><h3 class="is-inline-block"><a href="/about">关于</a></h3><h3 class="is-inline-block"><a href="/archives">归档</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile is-hidden"></div><div class="column is-9"><header class="my-4"></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">nvm 配置</h1><time class="has-text-grey" datetime="2020-06-12T08:27:55.000Z">2020-06-12</time><article class="mt-2 post-content"><p>1.前言 为了解决node各种版本存在不兼容现象，nvm是让你在同一台机器上安装和切换不同版本的node的工具   2.安装</p>
+<p>curl -o- <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh">https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh</a>  bash</p>
+<p>配置变量，打开文件</p>
+<p>vim ~/.bashrc</p>
+<p>添加</p>
+<p>export NVM_DIR=”$HOME/.nvm”<br>[ -s “$NVM_DIR/nvm.sh” ] &amp;&amp; . “$NVM_DIR/nvm.sh” # This loads nvm</p>
+<p>生效</p>
+<p>source ~/.bashrc</p>
+<p>  3.常见命令</p>
+<p>nvm ls-remote 列出所有可安装的版本</p>
+<p>nvm install <version> 安装指定的版本，如 nvm install v8.14.0</p>
+<p>nvm uninstall <version> 卸载指定的版本</p>
+<p>nvm ls 列出所有已经安装的版本</p>
+<p>nvm use <version> 切换使用指定的版本</p>
+<p>nvm current 显示当前使用的版本</p>
+<p>nvm alias default <version> 设置默认 node 版本</p>
+<p>nvm deactivate 解除当前版本绑定</p>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2020/06/29/linux-gem/" title="Linux gem"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">上一页: Linux gem</span></a><a class="button is-default" href="/2020/06/12/mac-mysql-setup/" title="mac mysql设置"><span class="has-text-weight-semibold">下一页: mac mysql设置</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Conor-Jin"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--></section><p><span>Copyright ©</span><span> Conor.Jin 2021</span></p></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/post.js"></script></body></html>

@@ -8,7 +8,7 @@
       <link href="2021/04/08/hexoInit/"/>
       <url>2021/04/08/hexoInit/</url>
       
-        <content type="html"><![CDATA[<h2 id="node-js-git-github-等相关不做表述"><a href="#node-js-git-github-等相关不做表述" class="headerlink" title="node.js git github  等相关不做表述"></a>node.js git github  等相关不做表述</h2><p>1.全局安装 hexo.js</p><p>npm install -g hexo-cli</p><p>2.检测hexo</p><p>hexo -v</p><p>3.项目初始化</p><p>hexo init [myblog]</p><p>cd [myblog]</p><p>4.安装依赖</p><p>npm i</p><p>5.下载第三方主题</p><p>hexo-theme-Claudia</p><p><a href="https://github.com/Haojen/hexo-theme-Claudia">https://github.com/Haojen/hexo-theme-Claudia</a></p><p>6.配置第三方</p><p>把下载好的解压文件夹放置到 themes 目录下</p><p>同时修改 根目录 _config.yml 的配置文件<br>theme 修改为下载的第三方主题</p><p>7.第三方主题配置不表</p><p>8.常用命令</p><p>启动本地服务器<br>hexo s</p><p>清除缓存文件 db.json 和已生成的静态文件 publi<br>hexo clean</p><p>生成网站静态文件到默认设置的 public 文件夹<br>hexo generate</p><p>上传至github gitee等<br>hexo deployd</p><p>一般简写<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p>]]></content>
+        <content type="html"><![CDATA[<h4 id="1-全局安装-hexo-js"><a href="#1-全局安装-hexo-js" class="headerlink" title="1.全局安装 hexo.js"></a>1.全局安装 hexo.js</h4><p>注：node.js git github  等相关不做表述</p><p><code>npm install -g hexo-cli</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npmiiii</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm aaa</span><br></pre></td></tr></table></figure><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(userStatus) &#123;</span><br><span class="line">   that.switchRoleAnchor()</span><br><span class="line">&#125;</span><br><span class="line">1</span><br></pre></td></tr></table></figure><h4 id="2-检测hexo"><a href="#2-检测hexo" class="headerlink" title="2.检测hexo"></a>2.检测hexo</h4><p><code>hexo -v</code></p><h4 id="3-项目初始化"><a href="#3-项目初始化" class="headerlink" title="3.项目初始化"></a>3.项目初始化</h4><p><code>hexo init [myblog]</code></p><p><code>cd [myblog]</code></p><h4 id="4-安装依赖"><a href="#4-安装依赖" class="headerlink" title="4.安装依赖"></a>4.安装依赖</h4><p><code>npm i</code></p><h4 id="5-下载第三方主题"><a href="#5-下载第三方主题" class="headerlink" title="5.下载第三方主题"></a>5.下载第三方主题</h4><p><code>hexo-theme-Claudia</code></p><p><code>https://github.com/Haojen/hexo-theme-Claudia</code></p><h4 id="6-配置第三方"><a href="#6-配置第三方" class="headerlink" title="6.配置第三方"></a><strong>6.配置第三方</strong></h4><p>把下载好的解压文件夹放置到 themes 目录下</p><p>同时修改 根目录 _config.yml 的配置文件<br>theme 修改为下载的第三方主题</p><h4 id="7-第三方主题配置不表"><a href="#7-第三方主题配置不表" class="headerlink" title="7.第三方主题配置不表"></a>7.第三方主题配置不表</h4><h4 id="8-常用命令"><a href="#8-常用命令" class="headerlink" title="8.常用命令"></a>8.常用命令</h4><p>启动本地服务器<br><code>hexo s</code></p><p>清除缓存文件 db.json 和已生成的静态文件 publi<br><code>hexo clean</code></p><p>生成网站静态文件到默认设置的 public 文件夹<br><code>hexo generate</code></p><p>上传至github gitee等<br><code>hexo deployd</code></p><p>一般简写<br><code>hexo clean &amp;&amp; hexo g</code></p><p><code>hexo d</code></p>]]></content>
       
       
       
@@ -17,6 +17,637 @@
             <tag> 网络 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>qiankun_配置</title>
+      <link href="2020/12/15/qiankun-configuration/"/>
+      <url>2020/12/15/qiankun-configuration/</url>
+      
+        <content type="html"><![CDATA[<p>一、基座配置 以react为基座，进行配置   1.搭建react搭建</p><p>npx create-react-app micro-app-main</p><p>  2.安装 qiankun</p><p>yarn add qiankun # 或者 npm i qiankun -S</p><p>  3.修改 src/index.js，引入qiankun，注册子应用（本示例搭建分别搭建react、vue两个子应用，提前注册）。</p><p>import React from ‘react’;<br>import ReactDOM from ‘react-dom’;<br>import ‘./index.css’;<br>import App from ‘./App’;<br>import reportWebVitals from ‘./reportWebVitals’;</p><p>import {registerMicroApps, start, initGlobalState} from ‘qiankun’   //引入qiankun</p><p>// 初始化 state<br>const initialState = {<br>  user: {<br>    name: ‘zzzz’,<br>    age: 14<br>  } // 用户信息<br>};<br>const actions = initGlobalState(initialState);<br>actions.onGlobalStateChange((state, prev) =&gt; {<br>  // state: 变更后的状态; prev 变更前的状态<br>  // console.log(state, prev);<br>});<br>actions.setGlobalState(initialState);<br>actions.offGlobalStateChange();</p><p>registerMicroApps(<br>  [<br>    {<br>        name:’micro-app-react’, //微应用的名称，微应用之间必须确保唯一(微应用中package.json中的name)<br>        entry:’//localhost:10100’, //微应用的entry地址<br>        container:’#frame’,//微应用的容器节点的选择器<br>        activeRule:’/react’//微应用的激活规则<br>    },<br>    {<br>        name:’micro-app-vue’, //微应用的名称，微应用之间必须确保唯一(微应用中package.json中的name)<br>        entry:’//localhost:10200’, //微应用的entry地址<br>        container:’#frame2’,//微应用的容器节点的选择器<br>        activeRule:’/vue’//微应用的激活规则<br>    }<br>  ]<br>)<br>start();</p><p>ReactDOM.render(<br>  &lt;React.StrictMode&gt;<br>    <App /><br>  &lt;/React.StrictMode&gt;,<br>  document.getElementById(‘root’)<br>);</p><p>// If you want to start measuring performance in your app, pass a function<br>// to log results (for example: reportWebVitals(console.log))<br>// or send to an analytics endpoint. Learn more: <a href="https://bit.ly/CRA-vitals">https://bit.ly/CRA-vitals</a><br>reportWebVitals();</p><p>  4.修改 src/App.js，根据 index.js中配置的子应用，设置子应用挂载Dom节点</p><p>import ‘./App.css’;<br>function App() {<br>  return (<br>    <div className="App"><br>      <p>subapp-container</p><br>      <div id='frame' /><br>      <div id='frame2' /><br>    </div><br>  );<br>}</p><p>export default App;</p><p>  二、子应用配置，react   1.搭建react子应用</p><p>npx create-react-app micro-app-react</p><p>  2.由于使用 creact-react-app 搭建项目，webpack配置无法暴露，配置 react-app-rewired</p><p>npm install react-app-rewired -D</p><p>在 react-app-rewired 安装完成后，我们还需要修改 package.json 的 scripts 选项，修改为由 react-app-rewired 启动应用，就像下面这样</p><p>// micro-app-react/package.json</p><p>//…<br>“scripts”: {<br>  “start”: “react-app-rewired start”,<br>  “build”: “react-app-rewired build”,<br>  “test”: “react-app-rewired test”,<br>  “eject”: “react-app-rewired eject”<br>}</p><p>  3.根目录下添加 .env 文件</p><p># micro-app-react/.env<br>PORT=10100<br>BROWSER=none</p><p>  4.修改 src/public-path.js。webpack 默认的 publicPath 为 “” 空字符串，会基于当前路径来加载资源。我们在主应用中加载微应用时需要重新设置 publicPath，这样才能正确加载微应用的相关资源</p><p>if (window.__POWERED_BY_QIANKUN__) {<br>    // eslint-disable-next-line<br>    __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;<br>}</p><p>  5.修改 src/index.js。导出微应用生命周期钩子函数</p><p>mport React from ‘react’;<br>import ReactDOM from ‘react-dom’;<br>import “./public-path”;<br>import App from “./App.js”;</p><p>if (window.__POWERED_BY_QIANKUN__) {<br>  // 动态设置 webpack publicPath，防止资源加载出错<br>  // eslint-disable-next-line no-undef<br>  __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;<br>}</p><p>/**<br> * 渲染函数<br> * 两种情况：主应用生命周期钩子中运行 / 微应用单独启动时运行<br> */<br>function render() {<br>  ReactDOM.render(<App />, document.getElementById(“root”));<br>}</p><p>// 独立运行时，直接挂载应用<br>if (!window.__POWERED_BY_QIANKUN__) {<br>  render();<br>}</p><p>export async function bootstrap() {<br>  console.log(‘react app bootstraped’);<br>}<br>/**<br> * 应用每次进入都会调用 mount 方法，通常我们在这里触发应用的渲染方法<br> * 通常我们可以在这里做一些全局变量的初始化，比如不会在 unmount 阶段被销毁的应用级别的缓存等。<br> *<br> */<br>export async function mount(props) {<br>  console.log(props)<br>  props.onGlobalStateChange((state, prev) =&gt; {<br>    // state: 变更后的状态; prev 变更前的状态<br>    console.log(state, prev);<br>  });<br>  ReactDOM.render(<App />, props.container ? props.container.querySelector(‘#root’) : document.getElementById(‘root’));<br>}</p><p>/**<br> * 应用每次 切出/卸载 会调用的方法，通常在这里我们会卸载微应用的应用实例/渲染方法<br> */<br>export async function unmount(props) {<br>  console.log(‘卸载’)<br>  ReactDOM.unmountComponentAtNode(props.container ? props.container.querySelector(‘#root’) : document.getElementById(‘root’));<br>}</p><p>/**<br> * 可选生命周期钩子，仅使用 loadMicroApp 方式加载微应用时生效，通常在这里我们会卸载微应用的应用实例<br> */<br>export async function update(props) {<br>  console.log(‘update props’, props);<br>}</p><p>  6.根目录创建config-overrides.js 文件。配置 webpack</p><p>const path = require(“path”);</p><p>module.exports = {<br>  webpack: (config) =&gt; {<br>    // 微应用的包名，这里与主应用中注册的微应用名称一致<br>    config.output.library = `micro-app-react`;<br>    // 将你的 library 暴露为所有的模块定义下都可运行的方式<br>    config.output.libraryTarget = “umd”;<br>    // 按需加载相关，设置为 webpackJsonp_VueMicroApp 即可<br>    config.output.jsonpFunction = `webpackJsonp_micro-app-react`;</p><pre><code>config.resolve.alias = &#123;  ...config.resolve.alias,  &quot;@&quot;: path.resolve(\_\_dirname, &quot;src&quot;),&#125;;return config;</code></pre><p>  },</p><p>  devServer: function (configFunction) {<br>    return function (proxy, allowedHost) {<br>      const config = configFunction(proxy, allowedHost);<br>      // 关闭主机检查，使微应用可以被 fetch<br>      config.disableHostCheck = true;<br>      // 配置跨域请求头，解决开发环境的跨域问题<br>      config.headers = {<br>        “Access-Control-Allow-Origin”: “*“,<br>      };<br>      // 配置 history 模式<br>      config.historyApiFallback = true;</p><pre><code>  return config;&#125;;</code></pre><p>  },<br>};</p><p>  三、子应用配置，vue   1.vue-cli 先创建一个 Vue 的项目</p><p>vue create micro-app-vue</p><p>  2.创建 src/public-path.js 文件。webpack 默认的 publicPath 为 “” 空字符串，会基于当前路径来加载资源。我们在主应用中加载微应用时需要重新设置 publicPath，这样才能正确加载微应用的相关资源</p><p>if (window.__POWERED_BY_QIANKUN__) {<br>    // 动态设置 webpack publicPath，防止资源加载出错<br>    // eslint-disable-next-line no-undef<br>    __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;<br> }</p><p>  3.修改 src/main.js 文件。 导出生命周期</p><p>import { createApp } from ‘vue’<br>import App from ‘./App.vue’</p><p>createApp(App).mount(‘#app’)</p><p>/**<br> * bootstrap 只会在微应用初始化的时候调用一次，下次微应用重新进入时会直接调用 mount 钩子，不会再重复触发 bootstrap。<br> * 通常我们可以在这里做一些全局变量的初始化，比如不会在 unmount 阶段被销毁的应用级别的缓存等。<br> */<br>export async function bootstrap() {<br>  console.log(“VueMicroApp bootstraped”);<br>}</p><p>/**<br> * 应用每次进入都会调用 mount 方法，通常我们在这里触发应用的渲染方法<br> */<br>export async function mount(props) {<br>  console.log(“VueMicroApp mount”, props);<br>//   render(props);<br>}</p><p>/**<br> * 应用每次 切出/卸载 会调用的方法，通常在这里我们会卸载微应用的应用实例<br> */<br>export async function unmount() {<br>  console.log(“VueMicroApp unmount”);<br>//   instance.$destroy();<br>//   instance = null;<br>//   router = null;<br>}</p><p>  4. 根目录 创建 vue.config.js 文件。webpack，使 main.js 导出的生命周期钩子函数可以被 qiankun 识别</p><p>const path = require(“path”);</p><p>module.exports = {<br>  devServer: {<br>    // 监听端口<br>    port: 10200,<br>    // 关闭主机检查，使微应用可以被 fetch<br>    disableHostCheck: true,<br>    // 配置跨域请求头，解决开发环境的跨域问题<br>    headers: {<br>      “Access-Control-Allow-Origin”: “*“,<br>    },<br>  },<br>  configureWebpack: {<br>    resolve: {<br>      alias: {<br>        “@”: path.resolve(__dirname, “src”),<br>      },<br>    },<br>    output: {<br>      // 微应用的包名，这里与主应用中注册的微应用名称一致<br>      library: “VueMicroApp”,<br>      // 将你的 library 暴露为所有的模块定义下都可运行的方式<br>      libraryTarget: “umd”,<br>      // 按需加载相关，设置为 webpackJsonp_VueMicroApp 即可<br>      jsonpFunction: `webpackJsonp_VueMicroApp`,<br>    },<br>  },<br>};</p><p>  四、分别启动主应用，以及两个子应用，通过主应用的路由切换 即可看到对应配置子应用</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Edge调试安卓手机H5页面</title>
+      <link href="2020/08/06/edgeh5/"/>
+      <url>2020/08/06/edgeh5/</url>
+      
+        <content type="html"><![CDATA[<p>一、前提 1.安卓手机，微信APP内打开url 2.PC浏览器，内核要求Chromium 3.手机打开开发者设置，USB调试   二、打开微信 <a href="http://debugx5.qq.com/%E9%A1%B5%E9%9D%A2%EF%BC%8C%E5%8F%AF%E6%89%AB%E6%8F%8F%E4%B8%8B%E9%9D%A2%E4%BA%8C%E7%BB%B4%E7%A0%81">http://debugx5.qq.com/页面，可扫描下面二维码</a> <img src="https://jindk.wang/blog/wp-content/uploads/2020/08/%E6%88%AA%E5%B1%8F2020-08-06-%E4%B8%8B%E5%8D%886.51.24.png">   三、<a href="http://debugx5.qq.com/">http://debugx5.qq.com/</a>  配置   信息tab下面，勾选”打开TBS内核Inspector调试功能”和”打开TBS内核X5jscore Inspector调试功能” 渲染Tab下，抓取配置页面，填写目标网址，例如 <a href="https://m.baidu.com/">https://m.baidu.com/</a>   点击 开始抓取 RenderLog 按钮，进行页面跳转   三、打开浏览器调试页面 以Edge浏览器为例，打开 <a href="edge://inspect/#devices">edge://inspect/#devices</a> 安卓USB连接电脑，打开开发者配置，开启USB调试，这时页面会显示链接成功， <img src="https://jindk.wang/blog/wp-content/uploads/2020/08/%E6%88%AA%E5%B1%8F2020-08-06-%E4%B8%8B%E5%8D%886.58.31.png"> 如图则是链接成功，如果连接失败，注意驱动等   四、进行调试 点击 inspect 即可进行调试</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>微信支付url未注册问题解决方案</title>
+      <link href="2020/07/08/wxurl/"/>
+      <url>2020/07/08/wxurl/</url>
+      
+        <content type="html"><![CDATA[<p>最近开发单页应用，然后集成在微信端。因为项目需要接通微信支付，而在开发过程中也遇上了一些问题。所以便写下这篇文章，希望给同样遇上问题的朋友一个参考。 在项目打包上线，微信上测试的时候结果报出以上错误。网上查看了很多资料，但是都没有比较详细的解决方案。 如果你也遇上以上的问题，那么我这篇文章也许能够帮到你。 也许是出于安全的考虑，在使用微信提供的JSSDK的时候，我们需要给当前的网址签名。我们需要在微信公众平台上填写当前网址的url。具体如下： <a href="http://www.test.com/orderPlus/demo1">www.test.com/orderPlus/demo1</a> //微信浏览器中访问的网址 那么我们微信公众平台上绑定的url就应该是<a href="http://www.test.com/orderPlus/%E3%80%82%E5%BE%AE%E4%BF%A1%E5%85%81%E8%AE%B8%E7%BD%91%E5%9D%80%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0%E5%8F%AF%E5%8F%98%E5%8C%96%EF%BC%8C%E6%AD%A4%E5%88%BB%E6%88%91%E4%BB%AC%E5%B0%B1%E8%83%BD%E5%A4%9F%E6%AD%A3%E5%B8%B8%E8%B0%83%E7%94%A8%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E6%8E%A5%E5%8F%A3%E4%BA%86%E3%80%82">www.test.com/orderPlus/。微信允许网址最后一个参数可变化，此刻我们就能够正常调用微信支付接口了。</a> <a href="http://www.test.com/orderPlus/">www.test.com/orderPlus/</a> //微信公众平台中授权url地址 如果你访问的网址如下，就会出现上图中的错误，当前页面url未注册的警告。 <a href="http://www.test.com/orderPlus/demo1/demo2">www.test.com/orderPlus/demo1/demo2</a> //注意，这种情况下会报错 因为微信签名url只能允许url地址最后一个参数可变化。但是，实际开发中，我们的支付页面可能有很多个，而且深入程度不同，而微信允许添加的url授权地址又只有5个。那样的话如何解决呢！ 使用H5新特性，来修改url地址 如果遇到以上问题，我们可以使用H5的history.pushState()和history.replaceState()这两个方法。这两个方法的作用是相同的，他们只会修改当前url的地址，但是不会刷新我们的网页，唯一不同点在于一个重新创建一个url地址，而另外一个会修改当前的url地址，导致路由历史记录被覆盖。那么，我们的问题就可以解决了。而这两个方法具体的使用，大家可以查询官方文档。 大致的解决方法是，比如一个充值页面，当我们输入完金额之后，点击充值按钮的时候，首先触发history.pushState(null,null,”A.html”)，传入三个参数，前两个参数大家参考官方，最后一个参数是我们需要修改的url地址。 这里我说明一下，自己使用上述方法后的一点心得。上述方法第三个参数，有一些注意点。 当前网址：<a href="http://www.test.com/orderPlus/demo1">www.test.com/orderPlus/demo1</a> 传入参数：history.pushState(null,null,”/A.html”) 最后网址：<a href="http://www.test.com/A.html">www.test.com/A.html</a> 当我们传入”/A.html”的时候，他会将我们域名后的参数全部去掉，然后将我们的参数添加上去。 当前网址：<a href="http://www.test.com/orderPlus/demo1">www.test.com/orderPlus/demo1</a> 传入参数：history.pushState(null,null,”A.html”) 最后网址：<a href="http://www.test.com/orderPlus/A.html">www.test.com/orderPlus/A.html</a> 当我们传入”A.html”的时候，他只会把网址最后一个参数修改掉。 当前网址：<a href="http://www.test.com/orderPlus/demo1">www.test.com/orderPlus/demo1</a> 传入参数：history.pushState(null,null,”？A.html”) 最后网址：<a href="http://www.test.com/orderPlus/demo1?A.html">www.test.com/orderPlus/demo1?A.html</a> 当我们传入”？A.html”的时候，他会将我们的添加的参数，添加到我们的url后。 以上就是需要注意的地方。 关于安卓可以唤起支付，ios不能唤起的问题 原本以为通过上诉的方法，一切会很顺利。结果，在我实际测试的时候，又出现了一个坑爹的情况。测试上安卓手机能够成功唤起支付，而ios却不能唤起。（ios下第一次能够唤起，关闭网页，再次打开就不能正常唤起了）。 查看许多的资料，最后得出的结果是，对于单页应用，ios系统获取签名的url是我们首次进入的地址，而安卓系统获取的是当前的url地址。 ios系统 首次进入网址：<a href="http://www.test.com/orderPlus/demo1">www.test.com/orderPlus/demo1</a> 进入到支付页面的网址：<a href="http://www.test.com/orderPlus/demo1/#/test1">www.test.com/orderPlus/demo1/#/test1</a> 我们授权的：url：<a href="http://www.test.com/orderPlus/">www.test.com/orderPlus/</a> 我们之前说过，微信能够允许url后一个可变参数，而现在出现两个参数，结果就无法唤起支付了。而安卓是拿取当前的url地址，而我们每次去唤起支付的时候，都会去修改这个地址，所以安卓就没有问题，而ios拿取的是我们首次进入的地址。 既然如此，就只能为ios系统在一开始进入的时候，就将url地址修改掉。 本人使用react框架开发单页应用，所以我在app.js也就是最顶层的组件中将url地址修改掉。成功解决问题。 url地址中的参数是可变的情况 本来以为一切就此结束，结果，又一个麻烦的问题出现了。项目中url中的一个参数是根据微信授权后，后台根据不同用户产生的不同的id值。这样的话，问题就出现了。 用户A登入，url地址为：<a href="http://www.test.com/orderPlus/A/demo1">www.test.com/orderPlus/A/demo1</a> 用户B登入，url地址为：<a href="http://www.test.com/orderPlus/B/demo1">www.test.com/orderPlus/B/demo1</a> 用户C登入，url地址为：<a href="http://www.test.com/orderPlus/C/demo1">www.test.com/orderPlus/C/demo1</a> 以上只是一个举例，实际上用户是无法预测的。而我们通过微信公众平台后台授权的url地址只有5个，就算没有限制，手动添加也是不可能的。 想了许久，最后我想到了一个方法。这里要使用history.pushState()第三个参数的第三种写法，也就是增加一个”？”。因为，在浏览器中，系统会默认将？后面的参数全都忽略。 比如：<a href="http://www.test.com/orderPlus?C/demo1">www.test.com/orderPlus?C/demo1</a> 以上url，系统只会识别<a href="http://www.test.com/orderPlus/demo%E8%87%B3%E4%BA%8E%E5%90%8E%E9%9D%A2%E7%9A%84%E5%8F%82%E6%95%B0%E9%83%BD%E4%B8%8D%E4%BC%9A%E7%AE%A1%EF%BC%8C%E8%80%8C%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%AD%BE%E5%90%8D%E4%B9%9F%E5%8F%AA%E4%BC%9A%E5%AF%BB%E6%89%BE%E5%89%8D%E9%9D%A2%E6%9C%89%E6%95%88%E7%9A%84%E5%8F%82%E6%95%B0%E3%80%82%E9%82%A3%E4%B9%88%E6%88%91%E4%BB%AC%E5%B0%B1%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E8%BF%99%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%B0%86url%E5%9C%B0%E5%9D%80%E4%BF%AE%E6%94%B9%E6%8E%89%E3%80%82">www.test.com/orderPlus/demo至于后面的参数都不会管，而微信授权签名也只会寻找前面有效的参数。那么我们就可以通过这种方式将url地址修改掉。</a> <a href="http://www.test.com/orderPlus/ab85s56d45d8e6f56/demo1#/list">www.test.com/orderPlus/ab85s56d45d8e6f56/demo1#/list</a> //这是我们一开始的地址。 而其中”ab85s56d45d8e6f56”是后台自动生成的一个参数，我们可以在JSP页面中获取得到，比如我将这个参数放在变量appconfig中，那么我们就可以通过下面这种方式修改了。 history.pushState(null,null,`/orderPlus/${appconfig}？`) //如此就能将我们的url修改成自己正常的了。 而且通过这种方式修改的url地址，并不会对单页应用内部路由产生问题。 ———————————————— 版权声明：本文为CSDN博主「guozhouyuan」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。 原文链接：<a href="https://blog.csdn.net/qvanminpiao/java/article/details/84452797">https://blog.csdn.net/qvanminpiao/java/article/details/84452797</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>deepin更换软件源</title>
+      <link href="2020/06/30/deepinchangesources/"/>
+      <url>2020/06/30/deepinchangesources/</url>
+      
+        <content type="html"><![CDATA[<p>1.手工修改源配置文件</p><p>sudo edit  /etc/apt/sources.list</p><p>  2.添加如下</p><p>## Generated by deepin-installer<br>deb [by-hash=force] <a href="https://mirrors.tuna.tsinghua.edu.cn/deepin">https://mirrors.tuna.tsinghua.edu.cn/deepin</a> panda main contrib non-free</p><p>  3.刷新软件源列表，更新软件</p><p>sudo apt-get update<br>sudo apt-get upgrade</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ubuntu </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux yum</title>
+      <link href="2020/06/29/linux-yum/"/>
+      <url>2020/06/29/linux-yum/</url>
+      
+        <content type="html"><![CDATA[<p>1.创建yum 文件夹</p><p>mkdir install yum</p><p>  2.进入yum文件夹</p><p>cd yum</p><p>  3.解压</p><p>tar -xvf yum-3.2.28.tar.gz</p><p>手动创建一个yum的conf文件，不然会报找不到文件的错yum.cli:Config Error: Error accessing file for config file:///etc/ touch /etc/yum.conf(存疑)   4.安装</p><p>cd yum-3.2.28<br>sudo apt install yum</p><p>  5.更新到新版本</p><p>yum check-update<br>yum update<br>yum clean all</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ubuntu </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux gem</title>
+      <link href="2020/06/29/linux-gem/"/>
+      <url>2020/06/29/linux-gem/</url>
+      
+        <content type="html"><![CDATA[<p>1.查看源地址</p><p>gem source -l</p><p>  2.删除默认的源地址</p><p>gem sources -r url地址</p><p>gem source -r <a href="https://rubygems.org/">https://rubygems.org/</a></p><p>注：默认的url地址后必须有”/”,否则删不掉   3.添加源地址</p><p>gem sources -a <a href="https://gems.ruby-china.com/">https://gems.ruby-china.com</a></p><p>  4.更新源的缓存</p><p>gem sources -u</p><p>  5.安装sass</p><p>sudo gem install sass</p><p>  6.查看sass 版本</p><p>sass -v</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ubuntu </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nvm 配置</title>
+      <link href="2020/06/12/nvm-setup/"/>
+      <url>2020/06/12/nvm-setup/</url>
+      
+        <content type="html"><![CDATA[<p>1.前言 为了解决node各种版本存在不兼容现象，nvm是让你在同一台机器上安装和切换不同版本的node的工具   2.安装</p><p>curl -o- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh">https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh</a>  bash</p><p>配置变量，打开文件</p><p>vim ~/.bashrc</p><p>添加</p><p>export NVM_DIR=”$HOME/.nvm”<br>[ -s “$NVM_DIR/nvm.sh” ] &amp;&amp; . “$NVM_DIR/nvm.sh” # This loads nvm</p><p>生效</p><p>source ~/.bashrc</p><p>  3.常见命令</p><p>nvm ls-remote 列出所有可安装的版本</p><p>nvm install <version> 安装指定的版本，如 nvm install v8.14.0</p><p>nvm uninstall <version> 卸载指定的版本</p><p>nvm ls 列出所有已经安装的版本</p><p>nvm use <version> 切换使用指定的版本</p><p>nvm current 显示当前使用的版本</p><p>nvm alias default <version> 设置默认 node 版本</p><p>nvm deactivate 解除当前版本绑定</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> mac </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mac mysql设置</title>
+      <link href="2020/06/12/mac-mysql-setup/"/>
+      <url>2020/06/12/mac-mysql-setup/</url>
+      
+        <content type="html"><![CDATA[<p>1，安装不表   2.mysql设置软链接</p><p>cd /usr/local/bin/</p><p>ln -s /usr/local/mysql/bin/mysql /usr/local/bin/</p><p>  3.验证</p><p>mysql –version</p><p>mysql  Ver 8.0.20 for macos10.15 on x86_64 (MySQL Community Server - GPL)</p><p>看到以上即安装成功   4.登录mysql</p><p>mysql -u root -p</p><p>  5.退出MySQL <code>exit</code> 或者 <code>quit</code>   6.其他常用命令</p><p>创建数据库：create database test;</p><p>查询数据库:  show databases;</p><p>选择数据库：use test;</p><p>删除数据库:  drop database test;</p><p>  7.Sequel pro 始终出于loading状态，无法切换到数据库 <a href="https://sequelpro.com/test-builds">https://sequelpro.com/test-builds</a>, 升级版本sequelpro，先使用测试版 <a href="https://github.com/sequelpro/sequelpro/issues/2699">https://github.com/sequelpro/sequelpro/issues/2699</a> 报错原因。 mysql8.0升级后造成的</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> mac </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常用命令</title>
+      <link href="2020/06/06/commands/"/>
+      <url>2020/06/06/commands/</url>
+      
+        <content type="html"><![CDATA[<p>1.scp 以从win到远程服务器为例子</p><p>scp E:\tst\a.png <a href="mailto:&#114;&#111;&#111;&#x74;&#x40;&#49;&#50;&#x37;&#x2e;&#48;&#46;&#x39;&#46;&#x30;&#x39;&#x30;">&#114;&#111;&#111;&#x74;&#x40;&#49;&#50;&#x37;&#x2e;&#48;&#46;&#x39;&#46;&#x30;&#x39;&#x30;</a>:/a/v/c</p><p>  2.修改文件夹权限 以 修改/a/c/z文件夹权限为777为例</p><p>sudo chmod 777 /a/c/z</p><p>  3.查看端口号占用 以3000端口为例</p><p>lsof -i :3000</p><p><img src="https://jindk.wang/blog/wp-content/uploads/2020/06/%E6%88%AA%E5%B1%8F2020-06-12-%E4%B8%8B%E5%8D%889.43.18.png"> 关闭占用 kill -9 PID</p><p> kill -9 5166</p><p>  4.tail 命令 tail 命令可用于查看文件的内容，有一个常用的参数 -f 常用于查阅正在改变的日志文件。 tail -f filename 会把 filename 文件里的最尾部的内容显示在屏幕上，并且不断刷新，只要 filename 更新就可以看到最新的文件内 容。 -n 表示行数 以 error-1.log 文件为例子，查看最近200行代码，</p><p>tail /a/b/c/d/logs/error-1.log -n 200 -f</p><p>  5.ssh 链接远程服务器 以 name 为用户名，地址为 127.0.0.1为例子</p><p>ssh <a href="mailto:&#x6e;&#97;&#x6d;&#x65;&#x40;&#x31;&#50;&#x37;&#46;&#48;&#x2e;&#48;&#x2e;&#49;">&#x6e;&#97;&#x6d;&#x65;&#x40;&#x31;&#50;&#x37;&#46;&#48;&#x2e;&#48;&#x2e;&#49;</a></p><p>输入密码即可远程链接服务器</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ubuntu </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>apache2开启https</title>
+      <link href="2020/06/06/apache2https/"/>
+      <url>2020/06/06/apache2https/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h2><p>ubuntu14，apache2，证书过期重新更换</p><p> </p><h2 id="二、分别修改，配置文件"><a href="#二、分别修改，配置文件" class="headerlink" title="二、分别修改，配置文件"></a>二、分别修改，配置文件</h2><p>sudo vi /etc/apache2/sites-available/000-default.conf</p><p>&lt;VirtualHost *:80&gt;<br>        // 邮箱<br>ServerAdmin <a href="mailto:&#97;&#x61;&#x61;&#97;&#x40;&#97;&#x61;&#97;&#x2e;&#x63;&#111;&#x6d;">&#97;&#x61;&#x61;&#97;&#x40;&#97;&#x61;&#97;&#x2e;&#x63;&#111;&#x6d;</a><br>        // 域名<br>ServerName <a href="http://www.xxx.wang/">www.xxx.wang</a><br>        // 根目录<br>DocumentRoot /var/www/html<br>        // 开启http强制跳转https<br>RewriteEngine on<br>RewriteCond %{HTTPS} !=on<br>RewriteRule   ^(.*)  https://%{SERVER_NAME}$1 [L,R]<br>ErrorLog ${APACHE_LOG_DIR}/error.log<br>CustomLog ${APACHE_LOG_DIR}/access.log combined<br></VirtualHost></p><p> </p><p>sudo vi /etc/apache2/sites-available/default-ssl.conf</p><p>&lt;IfModule mod_ssl.c&gt;<br>&lt;VirtualHost *:443&gt;<br>// 邮箱<br>ServerAdmin <a href="mailto:&#97;&#97;&#x61;&#97;&#64;&#97;&#x61;&#97;&#x2e;&#99;&#111;&#x6d;">&#97;&#97;&#x61;&#97;&#64;&#97;&#x61;&#97;&#x2e;&#99;&#111;&#x6d;</a><br>// 域名<br>ServerName <a href="http://www.xxx.wang/">www.xxx.wang</a><br>// 根目录<br>DocumentRoot /var/www/html</p><p>ErrorLog ${APACHE_LOG_DIR}/error.log<br>CustomLog ${APACHE_LOG_DIR}/access.log combined</p><p>SSLEngine on<br>SSLProxyEngine On<br>SSLProxyVerify none<br>SSLCertificateFile /etc/ssl/2020/2_<a href="http://www.jindk.wang.crt/">www.jindk.wang.crt</a><br>SSLCertificateKeyFile  /etc/ssl/2020/3_<a href="http://www.jindk.wang.key/">www.jindk.wang.key</a><br>SSLCertificateChainFile /etc/ssl/2020/1_root_bundle.crt</p><p>&lt;FilesMatch “\.(cgishtmlphtmlphp)$”&gt;<br>SSLOptions +StdEnvVars<br></FilesMatch><br>&lt;Directory /usr/lib/cgi-bin&gt;<br>SSLOptions +StdEnvVars<br></Directory></p></VirtualHost></IfModule><h1 id="vim-syntax-apache-ts-4-sw-4-sts-4-sr-noet"><a href="#vim-syntax-apache-ts-4-sw-4-sts-4-sr-noet" class="headerlink" title="vim: syntax=apache ts=4 sw=4 sts=4 sr noet"></a>vim: syntax=apache ts=4 sw=4 sts=4 sr noet</h1><p> </p><h2 id="三、确保生效，进行其他配置"><a href="#三、确保生效，进行其他配置" class="headerlink" title="三、确保生效，进行其他配置"></a>三、确保生效，进行其他配置</h2><p>1.开启SSL模块</p><p>sudo a2enmod ssl</p><p>2.启用SSL站点</p><p>sudo a2ensite default-ssl</p><p>3.加入监听端口 443</p><p>sudo gedit /etc/apache2/ports.conf</p><p>4.启动重定向</p><p>sudo a2enmod rewrite</p><p>5.重新加载配置</p><p>sudo service apache2 reload</p><p>6.重启apache2</p><p>sudo service apache2 restart</p><p>7.查看端口开放情况</p><p>netstat -tnl</p><p>  注：</p><ol><li> 5/6 执行一个即可，一个是重新加载apache配置文件，另一个是重启服务</li><li> 需要注意阿里云/腾讯云等运营商设置相关端口开放</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>React Native 调试</title>
+      <link href="2020/03/14/react-native-debugging/"/>
+      <url>2020/03/14/react-native-debugging/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、console-log查看"><a href="#一、console-log查看" class="headerlink" title="一、console.log查看"></a>一、console.log查看</h2><p>1.Android</p><p>react-native log-android</p><p>2.ios</p><p>react-native log-ios</p><p> </p><h2 id="二、adb命令下打开Dev菜单，避免再次摇晃手机才能弹出"><a href="#二、adb命令下打开Dev菜单，避免再次摇晃手机才能弹出" class="headerlink" title="二、adb命令下打开Dev菜单，避免再次摇晃手机才能弹出"></a>二、adb命令下打开Dev菜单，避免再次摇晃手机才能弹出</h2><p>adb shell input keyevent 82</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>window下安装Scoop</title>
+      <link href="2020/03/07/windowinstallscoop/"/>
+      <url>2020/03/07/windowinstallscoop/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、系统要求"><a href="#一、系统要求" class="headerlink" title="一、系统要求"></a>一、系统要求</h2><p>Windows 7 SP1+ / Windows Server 2008+* PowerShell 3+* .NET Framework 4.5+</p><p>并且需要翻墙</p><h2 id="二、准备"><a href="#二、准备" class="headerlink" title="二、准备"></a>二、准备</h2><p>先设置 PowerShell 允许执行未签名脚本</p><p>Set-ExecutionPolicy RemoteSigned -scope CurrentUser</p><p> </p><h2 id="三、安装"><a href="#三、安装" class="headerlink" title="三、安装"></a>三、安装</h2><p>下载 Scoop 安装脚本进行</p><p>iex (new-object net.webclient).downloadstring(‘<a href="https://get.scoop.sh&/#39;">https://get.scoop.sh&#39;</a>)</p><p> </p><h2 id="四、成功"><a href="#四、成功" class="headerlink" title="四、成功"></a>四、成功</h2><p>Initializing…<br>Downloading scoop…<br>Extracting…<br>Creating shim…<br>Downloading main bucket…<br>Extracting…<br>Adding ~\scoop\shims to your path.<br>‘lastupdate’ has been set to ‘2019-08-11T09:35:38.2537719+08:00’<br>Scoop was installed successfully!<br>Type ‘scoop help’ for instructions.</p><p> </p><h2 id="五、常用命令"><a href="#五、常用命令" class="headerlink" title="五、常用命令"></a>五、常用命令</h2><p>scoop search 搜索软件名<br>scoop install 安装软件<br>scoop update 更新软件<br>scoop status 查看软件状态<br>scoop uninstall 卸载软件<br>scoop info 查看软件详情<br>scoop home 打开软件主页<br>scoop list 查看已安装软件列表</p><p>// bucket源<br>scoop bucket list 查看bucket源<br>scoop bucket add [bucket源] 添加bucket源<br>scoop bucket rm [bucket源] 移除bucket源</p><p>// 切换软件不同版本<br>scoop reset python27 切换27版本<br>scoop reset python 切换3版本</p><p> </p><h2 id="六、添加常用bucket"><a href="#六、添加常用bucket" class="headerlink" title="六、添加常用bucket"></a>六、添加常用bucket</h2><p>scoop bucket add extras<br>scoop bucket add versions<br>scoop bucket add java</p><h2 id="七、安装java"><a href="#七、安装java" class="headerlink" title="七、安装java"></a>七、安装java</h2><p>// 先安装java源<br>scoop bucket add java<br>// 再安装<br>scoop install oraclejdk13</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其他 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS中macro-task(宏任务)与micro -task(微任务)</title>
+      <link href="2019/11/18/macrotaskandmicro-task/"/>
+      <url>2019/11/18/macrotaskandmicro-task/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、前提-同步异步"><a href="#一、前提-同步异步" class="headerlink" title="一、前提 同步异步"></a>一、前提 同步异步</h2><p>JS是一门单线程的语言，换言之就是无论如何都只有一个主线程来处理任务，所以为了加快处理速度，会将<strong>异步任务挂载起来（pending）</strong>，优先执行同步任务。  </p><h2 id="二、异步划分"><a href="#二、异步划分" class="headerlink" title="二、异步划分"></a>二、异步划分</h2><p>  <img src="http://jindk.wang/blog/wp-content/uploads/2019/11/%E5%BC%82%E6%AD%A5%E5%88%86%E7%B1%BB.png"> 异步分为macro-task(宏观任务)与micro -task(围观任务)。存放顺序都为先后顺序，反之执行顺序也是如此，更深入则是涉及到事件机制，这里不表。 既然执行顺序为先后顺序，划分又为宏观与微观，这两种执行顺序又怎样呢？   <strong>微观任务完成才会执行宏观任务</strong>  </p><h2 id="三、demo"><a href="#三、demo" class="headerlink" title="三、demo"></a>三、demo</h2><p>async function async1() {<br>    console.log(‘async1 start’);<br>    await async2();<br>    console.log(‘async1 end’);<br>}<br>async function async2() {<br>    console.log(‘async2’);<br>}</p><p>console.log(‘script start’);</p><p>setTimeout(function() {<br>    console.log(‘setTimeout’);<br>}, 0)</p><p>async1();</p><p>new Promise(function(resolve) {<br>    console.log(‘promise1’);<br>    resolve();<br>}).then(function() {<br>    console.log(‘promise2’);<br>});<br>console.log(‘script end’);</p><p>  执行顺序</p><p>script start<br>async1 start<br>async2<br>promise1<br>script end<br>async1 end<br>promise2<br>setTimeout</p><p> </p><h2 id="四、解析"><a href="#四、解析" class="headerlink" title="四、解析"></a>四、解析</h2><p><img src="http://jindk.wang/blog/wp-content/uploads/2019/11/macrotaskandmicrotask.png">   注意： 1.async/await实际上是promise+generator的语法糖，也就是promise，也就是微观任务 2.promise函数是同步</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>从头搭建博客系统之react服务端渲染</title>
+      <link href="2019/10/17/reactblogssr/"/>
+      <url>2019/10/17/reactblogssr/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、Next-js-安装"><a href="#一、Next-js-安装" class="headerlink" title="一、Next.js 安装"></a><strong>一、<code>Next.js</code> 安装</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-next-app</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save next react react-dom</span><br></pre></td></tr></table></figure><p> </p><h2 id="二、Ant-Design安装"><a href="#二、Ant-Design安装" class="headerlink" title="二、Ant Design安装"></a><strong>二、</strong>Ant Design安装</h2><p>npm i antd –save</p><p>npm i babel-plugin-import –save</p><p>npm i babel-preset-react-app –save</p><p>package.json 添加配置信息</p><p>  “babel”: {<br>    “presets”: [<br>      “react-app”<br>    ],<br>    “plugins”: [<br>      [<br>        “import”,<br>        {<br>          “libraryName”: “antd”,<br>          “style”: “css”<br>        }<br>      ]<br>    ]<br>  }</p><p>个人喜欢按照需要引用，具体配置参考 <a href="http://jindk.wang/blog/index.php/2019/10/16/reactinitmatters/">http://jindk.wang/blog/index.php/2019/10/16/reactinitmatters/</a>  </p><h2 id="三、Next支持CSS文件"><a href="#三、Next支持CSS文件" class="headerlink" title="三、Next支持CSS文件"></a><strong>三、</strong><code>Next</code>支持CSS文件</h2><p>如果要全局引入Ant Design可以进行第三步的配置</p><p>npm i @zeit/next-css</p><p><code>blog</code>根目录下，新建一个<code>next.config.js</code>文件。这个就是<code>Next.js</code>的总配置文件</p><p>const withCss = require(‘@zeit/next-css’)</p><p>if(typeof require !== ‘undefined’){<br>    require.extensions[‘.css’]=file=&gt;{}<br>}</p><p>module.exports = withCss({})</p><p> </p><h2 id="四、axios"><a href="#四、axios" class="headerlink" title="四、axios"></a><strong>四、axios</strong></h2><p> npm i axios –save</p><p> </p><h2 id="五、安装marked和highlight"><a href="#五、安装marked和highlight" class="headerlink" title="五、安装marked和highlight"></a><strong>五、</strong>安装marked和highlight</h2><p>npm i marked –save</p><p> npm i highlight –save</p><p>    基础架子搭建完毕</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>NodeJS配置</title>
+      <link href="2019/10/16/nodejsinit/"/>
+      <url>2019/10/16/nodejsinit/</url>
+      
+        <content type="html"><![CDATA[<p>1. 初始化</p><p> npm init</p><p>  2.安装koa</p><p>npm i koa</p><p>  3.使用ejs模板引擎</p><p>npm install –save koa-views</p><p>npm install ejs –save</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>初用react注意事项</title>
+      <link href="2019/10/16/reactinitmatters/"/>
+      <url>2019/10/16/reactinitmatters/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、绝对路径问题"><a href="#一、绝对路径问题" class="headerlink" title="一、绝对路径问题"></a><strong>一、绝对路径问题</strong></h2><p>1.使用官方脚手架安装不会暴露webpack的配置，需要运行</p><p>npm run eject</p><p>成功之后（之前会有提示，git上传接文件即可） npm run eject过后就会生成两个文件夹 <img src="http://jindk.wang/blog/wp-content/uploads/2019/10/20190415101622250%E5%89%AF%E6%9C%AC.png">   2.然后找到config文件里面的webpack.config.js <img src="http://jindk.wang/blog/wp-content/uploads/2019/10/20190415101754810%E5%89%AF%E6%9C%AC.png">   3.搜索alias 并改成一下代码 <img src="http://jindk.wang/blog/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-16-14.59.19.png">   4.然后再在页面里面把相对路径改成以@开头的绝对路径 <img src="http://jindk.wang/blog/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-16-15.00.22.png"> 5.重启项目  </p><h2 id="二、antd-按需要引用组件无效"><a href="#二、antd-按需要引用组件无效" class="headerlink" title="二、antd 按需要引用组件无效"></a><strong>二、antd 按需要引用组件无效</strong></h2><p>1.先按照antd</p><p>npm install –save antd</p><p>  2.按需引用组件 <img src="http://jindk.wang/blog/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-16-16.41.25.png">   3.这是使用无效。因为antd默认引入样式是less，所以需要手动配置为CSS，配置babel 安装 babel-plugin-import</p><p>npm install babel-plugin-import –save</p><p>  4.在package.json中配置，这种方法成功的前提是webpack里query下配置babelrc：true， 这样就会使用babelrc文件中的配置</p><p>  “babel”: {<br>    “presets”: [<br>     “react-app”<br>    ],<br>    “plugins”: [<br>     [<br>      “import”,<br>      {<br>       “libraryName”: “antd”,<br>       “style”: “css”<br>      }<br>     ]<br>    ]<br>  }</p><p> </p><h2 id="三、利用-styled-components-修改-antd-样式"><a href="#三、利用-styled-components-修改-antd-样式" class="headerlink" title="三、利用 styled-components 修改 antd 样式"></a><strong>三、利用 styled-components</strong> <strong>修改</strong> <strong>antd 样式</strong></h2><p>方法1.如图所示，再 antd 组件中引入 style样式 （与styled-components 无关） <img src="http://jindk.wang/blog/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-17-16.49.19.png"> <img src="http://jindk.wang/blog/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-17-16.49.47.png">   方法2. 在styled-components 中引入 antd 组件 修改 css 样式 <img src="http://jindk.wang/blog/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-17-16.59.40.png"> <img src="http://jindk.wang/blog/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-17-17.00.01.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Navicat12破解教程</title>
+      <link href="2019/10/13/navicat12crack/"/>
+      <url>2019/10/13/navicat12crack/</url>
+      
+        <content type="html"><![CDATA[<p>支持最新版Navicat12.1.20 注册机为Navicat_Keygen_Patch_v4.8   1、先安装navicat12 ，完成后打开软件，点击14天试用，关闭软件！！ 2、关闭杀毒软件（自行百度），解压Navicat_Keygen_Patch_v4.8_By_DFoX，右键管理员身份运行程序 <img src="http://jindk.wang/blog/wp-content/uploads/2019/10/20190226200802317.jpg"> 3、点击patch（只能patch一次！！切记，走过的坑），找到Navicat12的安装路径，找到主程序Navicat.exe或者navicat，选中，打开，会提示Cracked，则此步骤表明成功，继续 4、打开Navicat12软件，点击弹出框的注册 5、点击破解软件中间的“4.keygen/offline activation”的Generate ，稍等片刻，前面软件框生成的序列号会自动插入到Navicat12的注册界面，核对一下是否成功。 <img src="http://jindk.wang/blog/wp-content/uploads/2019/10/20190227190500473.jpg"> 6、点击Navicat12注册页面的激活—-手动激活，将生成的请求码复制到破解软件的request code 后面的大框内， <img src="http://jindk.wang/blog/wp-content/uploads/2019/10/20190227190912138.jpg"> 7、如果出现“error decrypt code”，卸载安装的Navicat12 ，删除安装目录，重复第1步骤。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 破解 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>react初始化以及主要使用包说明</title>
+      <link href="2019/09/27/reactinit/"/>
+      <url>2019/09/27/reactinit/</url>
+      
+        <content type="html"><![CDATA[<p>一、 脚手架安装 npx 安装</p><p>npx create-react-app my-app<br>cd my-app<br>npm start</p><p>注：</p><p>npx create-react-app my-app</p><p>等同于</p><p>npm install -g create-react-app<br>create-react-app my-app</p><p>  二、styled-components安装</p><p>npm install –save styled-components</p><p>注： styled-components 是对css样式进行模块化封装的包，所以文件应该是一个 .js，方便示例使用单个文件使用如下</p><p>import React, { Component,Fragment} from ‘react’;<br>//引入styled-components<br>import styled from ‘styled-components’</p><p>//修改了div的样式<br>const Title = styled.div`<br>  font-size:1.5rem;<br>  color:red<br>`<br>// 修改了button的样式<br>const Button = styled.button`<br>    border:none;<br>    background-color:blue<br>`</p><p>class App extends Component {<br>  render() {<br>    return (<br>      <Fragment><br>      <Title>大红牛</Title><br>      <Button>枸杞</Button><br>    </Fragment><br>    )<br>  }<br>}<br>export default App;</p><p>    三、react-transition-group实现动画效果</p><p>npm install react-transition-group –save</p><p>注： react-transition-group较为方便的实现动画效果，以styled-components包示例修改如下，本意是实现隐藏和展现，但是并未写相关逻辑</p><p>import React, { Component,Fragment} from ‘react’;<br>//引入styled-components<br>import styled from ‘styled-components’<br>// 在 react-transition-group 引入 CSSTransition<br>import { CSSTransition } from ‘react-transition-group’;</p><p>//修改了div的样式<br>const Title = styled.div`<br>  font-size:1.5rem;<br>  color:red<br>    // enter是入场前的刹那<br>    &amp;.slide-enter{<br>        transition: all .2s ease-out;<br>    }<br>    // 出场前的一刹那<br>    &amp;.slide-exit{<br>        width     : 160px<br>        transition: all .2s ease-out;<br>    }<br>    // enter-active指入场后到入场结束的过程<br>    &amp;.slide-enter-active{<br>        transition: all .2s ease-out;<br>    }<br>    &amp;.slide-exit-active{<br>        width: 160px<br>    }<br>`<br>// 修改了button的样式<br>const Button = styled.button`<br>    border:none;<br>    background-color:blue<br>`</p><p>class App extends Component {<br>  render() {<br>    return (<br>        <Fragment><br>            <CSSTransition                in         = {focused}                timeout    = {200}                classNames = "slide"            ><br>                <Title>大红牛</Title><br>                <Button>枸杞</Button><br>            </Fragment><br>        </Fragment><br>    )<br>  }<br>}<br>export default App;</p><p>    四、redux 安装 1.安装redux相关库</p><p>npm  install redux –save</p><p>2.安装react-redux库</p><p>npm install react-redux –save</p><p>  注： redux 是与react完全无关的数据管理库，react-redux是redux专门为react封装的库。 更多的解释说明看阮一峰老师的博客即可，<a href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html">http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html</a>     五、chrome 浏览器Redux DevTools插件的设置 1.详细信息在<a href="https://github.com/zalmoxisus/redux-devtools-extension">GitHub</a> 2.store 中的 index 文件配置如下</p><p>const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__  compose;</p><p>const store = createStore(reducer, composeEnhancers());</p><p>  六、immutable-js安装</p><p>npm install immutable</p><p>注： immutable 格式数据是一旦创建，就不能再被更改的数据，主要是为了解决js的引用赋值。优点降低数据复杂度、节省内存不表，主要是刚刚使用注意他与原生JS数据相似的地方，例如，map、list等等  </p><p>七、使用redux-immutable统一数据格式</p><p>npm install redux-immutable –save</p><p>注： 这个包主要是配合 redux中的state 转变为 immutable 使用  </p><p>八、redux-thunk安装</p><p>npm install –save redux-thunk</p><p>注： Redux store 仅支持同步数据流。使用 thunk 等中间件可以帮助在 Redux 应用中实现异步性。可以将 thunk 看做 store 的 dispatch() 方法的封装器。更直白的将就是对 store.dispatch()的增强。示例</p><p>直接将thunk中间件引入，放在applyMiddleware方法之中，传入createStore方法，就完成了store.dispatch()的功能增强<br>// thunk 的引用<br>import thunk from ‘redux-thunk’;<br>import reducer from ‘./reducer’;</p><p>// chrome 拓展所用<br>const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__  compose;</p><p>const store = createStore(reducer, composeEnhancers(<br>    applyMiddleware(thunk)<br>));</p><p>  九、axios安装</p><p>npm isntall axios –save</p><p>  十、react-router-dom 安装</p><p>npm install –save react-router-dom</p><p>注： 用React单页面应用，要想实现页面间的跳转，常用的有两个包可以实现这个需求，那就是react-router和react-router-dom。 react-router-dom: 基于react-router，加入了在浏览器运行环境下的一些功能。示例</p><p>import React from ‘react’;<br>import { Provider } from ‘react-redux’;<br>import { BrowserRouter, Route } from ‘react-router-dom’;<br>import { Globalstyle } from ‘./style’<br>import Header from ‘./common/header’<br>import Home from ‘./page/home/index’<br>import Detail from ‘./page/detail/loadable’<br>import Login from ‘./page/login/index’<br>import Write from ‘./page/write/index’<br>import store from ‘./store’;</p><p>function App() {<br>  return (<br>    <Provider store={store} className="App"><br>      <BrowserRouter><br>        <Header/><br>        <Route path='/' exact component={Home}></Route><br>        <Route path='/login' exact component={Login}></Route><br>        <Route path='/write' exact component={Write}></Route><br>        <Route path='/detail/:id' exact component={Detail}></Route><br>      </BrowserRouter><br>      <Globalstyle/><br>    </Provider><br>  );<br>}</p><p>export default App;</p><p>      十一、react-loadable安装</p><p>npm install react-loadable –save-dev</p><p>注： react开发单页面应用时，打包后的js文件特别巨大，首屏加载会特别缓慢。react-loadable思路是将代码分割。示例 公共通用组件</p><p>import React from ‘react’;<br>import Loadable from ‘react-loadable’;</p><p>//通用的过场组件<br>const loadingComponent =()=&gt;{<br>    return (<br>        <div>loading</div><br>    )<br>}</p><p>//过场组件默认采用通用的，若传入了loading，则采用传入的过场组件<br>export default (loader,loading = loadingComponent)=&gt;{<br>    return Loadable({<br>        loader,<br>        loading<br>    });<br>}</p><p>home组件使用</p><p>import React, { Fragment } from ‘react’<br>import { BrowserRouter, Route } from ‘react-router-dom’<br>import loadable from ‘../util/loadable’</p><p>const Home = loadable(()=&gt;import(‘@pages/home’))</p><p>const Routes = () =&gt; (<br>    <BrowserRouter><br>        <Route path="/home" component={Home}/><br>    </BrowserRouter><br>);</p><p>export default Routes</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux卸载mysql5.7并配置mysql8</title>
+      <link href="2019/07/02/uninstallmysql57configuremysql8/"/>
+      <url>2019/07/02/uninstallmysql57configuremysql8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-卸载mysql5-7"><a href="#1-卸载mysql5-7" class="headerlink" title="1.卸载mysql5.7"></a>1.卸载mysql5.7</h2><p>卸载：</p><p>$ sudo apt-get autoremove –purge mysql-server</p><p>$ sudo apt-get remove mysql-common</p><p>  清楚数据：</p><p>dpkg -l grep ^rcawk ‘{print $2}’ sudo xargs dpkg -P</p><p> </p><h2 id="2-检测残留"><a href="#2-检测残留" class="headerlink" title="2.检测残留"></a>2.检测残留</h2><p>$ sudo dpkg –listgrep mysql</p><p>查看mysql有哪些依赖  </p><p>$ sudo apt-get remove XXXXX</p><p>$ sudo apt-get autoremove  XXXXX</p><p> </p><h2 id="3-安装mysql8"><a href="#3-安装mysql8" class="headerlink" title="3.安装mysql8"></a>3.安装mysql8</h2><p>注意： ubuntu会默认安装mysql5.7版本!!!  所以要先切换软件库   更新软件库：</p><p>sudo apt-get update</p><p>  在mysql官网下载8.0版本的deb文件并安装： <a href="https://dev.mysql.com/downloads/file/?id=477124">https://dev.mysql.com/downloads/file/?id=477124</a> 以 mysql-apt-config_0.8.10-1_all.deb，为例(一定要去官网下载最新版！！！) 切换到下载目录后执行安装命令</p><p>$ sudo dpkg -i mysql-apt-config_0.8.10-1_all.deb</p><p>  然后会弹出以下窗口，确认一下第一项MySQL Server &amp; Cluster后面的版本是不是8.0版本，如果不是，将光标移动到此处，enter键修改成8.0。没问题后选OK <img src="http://jindk.wang/blog/wp-content/uploads/2019/07/20180914221258288.png">   再次更新软件库:</p><p>$ sudo apt-get update</p><p>  安装mysql服务器:</p><p>$ sudo apt-get install mysql-server</p><p>  安装过程中，会弹出设置root用户的密码 <img src="http://jindk.wang/blog/wp-content/uploads/2019/07/20180914221906522.png">   之后弹出选择加密方式，建议选择5.X <img src="http://jindk.wang/blog/wp-content/uploads/2019/07/20180914222229652.png">  </p><h2 id="4-测试"><a href="#4-测试" class="headerlink" title="4.测试"></a>4.测试</h2><p>mysql -u root -p</p><p>输入密码成功登陆即可  </p><h2 id="5-使用phpmyadmin"><a href="#5-使用phpmyadmin" class="headerlink" title="5.使用phpmyadmin"></a>5.使用phpmyadmin</h2><p>成功后在shell下输入mysql -u root -p，再输入密码能正常进入，但在phpmyadmin连接，提示无法连接，具体报错信息为</p><p>mysqli_real_connect(): The server requested authentication method unknown to the client [sha256_password]</p><p>  原因； 8.0.11版本起，不再像mysql5.7及以前版本那样，设置用户密码时默认的验证方式为caching_sha2_password，如果发现升级mysql8.0.11后原有的程序不能连接mysql，可迅速在mysql command line client客户端用下面的命令设置成mysql5.7及以前版本的密码验证方式，同时MYSQL8.0.11下修改密码的方式与原先也不大一样，原先的部分修改密码的命令在mysql8.0.11下不能使用。   解决办法：为原来的验证方式，然后从新创建用户并授权即可</p><p>mysql -uroot -p<br>use mysql;<br>ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘你的密码’;</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ubuntu18 配置php7.1</title>
+      <link href="2019/07/02/ubuntu18-configure-php71/"/>
+      <url>2019/07/02/ubuntu18-configure-php71/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><p>$ sudo apt-get install software-properties-common<br>$ sudo add-apt-repository ppa:ondrej/php<br>$ sudo apt-get update<br>$ sudo apt-get install -y php7.1<br>$ sudo apt-get -y install php7.1-mysql<br>$ sudo apt-get install php7.1-fpm<br>$ apt-get install php7.1-curl php7.1-xml php7.1-mcrypt php7.1-json php7.1-gd php7.1-mbstring</p><p> </p><h2 id="2-检测"><a href="#2-检测" class="headerlink" title="2.检测"></a>2.检测</h2><p>$ php-v</p><p><img src="http://jindk.wang/blog/wp-content/uploads/2019/07/php7.1.png"> 如图则成功  </p><h2 id="3-配置-PHP"><a href="#3-配置-PHP" class="headerlink" title="3.配置(PHP)"></a>3.配置(PHP)</h2><p>$ sudo vim /etc/php/7.1/fpm/php.ini</p><p>将cgi.fix_pathinfo=1这一行去掉注释，将1改为0  </p><p>$ sudo vim /etc/php/7.1/fpm/pool.d/<a href="http://www.conf/">www.conf</a></p><p>配置这个 listen = /var/run/php7.1-fpm.sock  </p><p>$ sudo service php7.1-fpm restart</p><p>重启php-fpm 模块  </p><h2 id="4-配置-Nginx"><a href="#4-配置-Nginx" class="headerlink" title="4.配置(Nginx)"></a>4.配置(Nginx)</h2><p>PHP-FPM 与 Nginx 通信方式有两种，一种是基于TCP的 Internet domain socket 方式，一种是 UNIX domain socket 方式。 这里的 3/4步骤是基于  UNIX domain socket 方式  </p><p>$ sudo vim /etc/nginx/sites-available/default</p><p>修改Nginx配置文件  </p><p>location ~ \.php$ {<br>        include snippets/fastcgi-php.conf;<br>        # With php7.0-cgi alone:<br>        # fastcgi_pass 127.0.0.1:9000;<br>        # With php7.0-fpm:<br>        fastcgi_pass unix:/run/php/php7.1-fpm.sock;<br>    }</p><p>  Nginx已经为与 PHP-FPM的整合准备好了，只要吧注释去掉即可，只需要将下面这部分改好就可以了。sock文件路径为 /run/php/php7.1-fpm.sock 。（视安装php版本而定）  </p><p>$ sudo systemctl restart nginx</p><p>重启nginx即可  </p><h2 id="5-检测"><a href="#5-检测" class="headerlink" title="5.检测"></a>5.检测</h2><p>  新建php文件，phpinfo()，页面成功运行即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ubuntu18 配置nginx服务器</title>
+      <link href="2019/07/02/ubuntu18configurenginx/"/>
+      <url>2019/07/02/ubuntu18configurenginx/</url>
+      
+        <content type="html"><![CDATA[<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a><strong>注意：</strong></h2><ol><li> nginx服务器可以直接从软件源中进行安装。</li><li> 注意防火墙以及云服务器的端口列表是否开放。</li></ol><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>更新软件源</p><p>$ sudo apt-get update</p><p>安装nginx</p><p>sudo apt-get install nginx</p><p> </p><h2 id="2-检测"><a href="#2-检测" class="headerlink" title="2. 检测"></a>2. 检测</h2><p>$ sudo systemctl status nginx</p><p><img src="http://jindk.wang/blog/wp-content/uploads/2019/07/15620725731.png"> 出现如上图所示则成功 或者直接输入ip或者域名 <img src="http://jindk.wang/blog/wp-content/uploads/2019/07/nginx%E6%88%90%E5%8A%9F.png"> 以上两种情况均可验证  </p><h2 id="3-管理进程"><a href="#3-管理进程" class="headerlink" title="3. 管理进程"></a>3. 管理进程</h2><p>停止nginx服务器:</p><p>$ sudo systemctl stop nginx</p><p>  启动nginx服务器:</p><p>$ sudo systemctl start nginx</p><p>  重启nginx服务器:</p><p>$ sudo systemctl restart nginx</p><p>  只是简单地进行配置更改，Nginx通常可以重新加载而不会丢失连接：</p><p>$ sudo systemctl reload nginx</p><p>  默认情况下，Nginx配置为在服务器引导时自动启动 启动服务器自动启动Nginx：</p><p>$ sudo systemctl enable nginx</p><p>  关闭自动服务器自动启动Nginx</p><p>$ sudo systemctl disable nginx</p><p> </p><h2 id="4-配置Nginx"><a href="#4-配置Nginx" class="headerlink" title="4. 配置Nginx"></a>4. 配置Nginx</h2><p>在ubuntu18 和 nginx 1.14.0的环境下  nginx 配置文件位置如下 /etc/nginx/sites-available/default 可以设置端口， 网站根目录 ， ssl ， 网站首页等等不一一展开</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ubuntu </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MAC版MAMP环境下为PHP7.x安装redis扩展</title>
+      <link href="2018/11/17/macmampredis/"/>
+      <url>2018/11/17/macmampredis/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-依赖安装-Homebrew"><a href="#1-依赖安装-Homebrew" class="headerlink" title="1.依赖安装 Homebrew"></a>1.依赖安装 Homebrew</h2><p>（Mac 电脑中已安装了 Homebrew 包管理器的可忽略此步）如果你的 MAC 电脑未安装有 Homebrew——一个包管理器，需要先安装 Homebrew 包管理器，后面步骤中的 ./configure 命令和安装 redis 服务端的命令等需要 brew 为其安装组件。 打开 terminal，安装 Homebrew：</p><p>/usr/bin/ruby -e “$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)</p><p>脚本在执行过程中会有多次暂停，并说明将它将做什么；同时也会边执行、边需要联网下载资源，下载速度不会很快（因为是国内网络访问国外站点资源），请耐心等待安装完成。  </p><h2 id="2-依赖安装-configure"><a href="#2-依赖安装-configure" class="headerlink" title="2.依赖安装 configure"></a>2.依赖安装 configure</h2><p>（Mac 电脑中已安装了 configure 配置组件的可忽略此步）使用 brew 命令安装 configure 配置组件。</p><p>brew install autoconf wget</p><p> </p><h2 id="3-下载-php-redis-扩展组件的安装包"><a href="#3-下载-php-redis-扩展组件的安装包" class="headerlink" title="3.下载 php-redis 扩展组件的安装包"></a>3.下载 php-redis 扩展组件的安装包</h2><p>在终端中使用 git clone 命令下载 php-redis 扩展组件的安装包</p><p>git clone <a href="https://github.com/nicolasff/phpredis.git">https://github.com/nicolasff/phpredis.git</a></p><p>下载完成后系统会自动解压安装包文件。如果未自动解压，请手动解压或使用 unzip phpredis.zip 命令解压。 解压后使用 cd 命令进入 phpredis 目录：</p><p>cd phpredis/</p><p> </p><h2 id="4-使用-phpize-命令编译生成-configure-配置文件"><a href="#4-使用-phpize-命令编译生成-configure-配置文件" class="headerlink" title="4.使用 phpize 命令编译生成 configure 配置文件"></a>4.使用 phpize 命令编译生成 configure 配置文件</h2><p>phpize 命令： 此时终端显示的当前目录是 phpredis，在终端中执行以下命令：</p><p>/Applications/MAMP/bin/php/php7.2.1/bin/phpize –with-php-config=/Applications/MAMP/bin/php/php7.2.1/bin/php-config</p><p>如果出现此错误：</p><p>Cannot find autoconf. Please check your autoconf installation and the $PHP_AUTOCONF environment variable. Then, rerun this script.</p><p>则是因为此命令依赖 autoconf 工具，需要安装 autoconf 工具（参考第一步中的第2点）。 如果执行成功，会提示如下信息： <img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2260770349,1912336145&fm=173&app=25&f=JPEG?w=640&h=106">  </p><h2 id="5-配置、编译并安装-phpredis"><a href="#5-配置、编译并安装-phpredis" class="headerlink" title="5.配置、编译并安装 phpredis"></a>5.配置、编译并安装 phpredis</h2><p>配置 phpredis 命令。 此时终端显示的当前目录是 phpredis，在终端中执行以下命令</p><p>./configure –with-php-config=/Applications/MAMP/bin/php/php7.2.1/bin/php-config</p><p>如果执行出错，提示“未找到指定目录”之类的信息，也是因为此命令依赖 autoconf 工具，需要安装 autoconf 工具（参考第二步）。 如果执行成功，像这样： <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2330634188,2198640965&fm=173&app=25&f=JPEG?w=640&h=427&s=ABE273235BBCB6C84ED5F50B0000E0C2"> 编译与安装 phpredis 命令（make 是编译，make install 是安装）</p><p>make &amp;&amp; make install</p><p>安装成功后，这时会在 phpredis/modules 目录下生成了 redis.so 文件。同时 redis.so 会自动复制到/Applications/MAMP/bin/php/php7.0.8/lib/php/extensions/no-debug-non-zts-20171025/ 目录下（extensions 后面带日期部分的那一级目录可能会与我的不一样，请以自己电脑上的为准）。如果该目录下不存在 redis.so，可手动将 phpredis/modules 目录下的 redis.so 复制过去。至此，phpredis 扩展已安装成功  </p><h2 id="6-修改-php-ini"><a href="#6-修改-php-ini" class="headerlink" title="6.修改 php.ini"></a>6.修改 php.ini</h2><p>建议在 MAMP Pro 软件中打开 php.ini 文件并修改，因为在终端中使用 vim 命令编辑 php.ini 文件或手动打开编辑 php.ini 文件保存后可能不会起作用，所以建议在 MAMP Pro 软件中打开 php.ini 文件并修改： <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2448095372,2140049450&fm=173&app=25&f=JPEG?w=639&h=259&s=F5259A545A65310B861E8AC30300B0BF"> 在 php.ini 中搜索 “extension=”，在后面添加一行：”extension=redis.so”，保存后重启 MAMP。 <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=185617445,1884557620&fm=173&app=25&f=JPEG?w=598&h=503&s=4FC2ED1A110E454D4A69A5DB0000D0B3">  </p><h2 id="7-redis-组件是否安装成功"><a href="#7-redis-组件是否安装成功" class="headerlink" title="7.redis 组件是否安装成功"></a>7.redis 组件是否安装成功</h2><p>检测方案可以使用 php-m  也可以使用 phpinfo() 查看   注意：操作此步骤之前 必须将系统默认的php环境切换到MAMP中 参考：<a href="https://baijiahao.baidu.com/s?id=1602787432736329481&amp;wfr=spider&amp;for=pc">https://baijiahao.baidu.com/s?id=1602787432736329481&amp;wfr=spider&amp;for=pc</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> mac </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>切换Mac默认PHP版本为MAMP</title>
+      <link href="2018/11/17/macphpmamp/"/>
+      <url>2018/11/17/macphpmamp/</url>
+      
+        <content type="html"><![CDATA[<p>安装装了MAMP集成环境，打开终端输入：which php，会显示/usr/bin/php，这个就是是系统自带的PHP版本，要切换默认的PHP版本为MAMP下的PHP，需要修改系统bash_profile并执行这个shell脚本。  </p><h2 id="1-前期准备"><a href="#1-前期准备" class="headerlink" title="1.前期准备"></a>1.前期准备</h2><p>先查看好 MAMP 相关对应PHP版本的路径，例如</p><p>/Applications/MAMP/bin/php/php5.5.38/</p><p> </p><h2 id="2-修改-bash-profile"><a href="#2-修改-bash-profile" class="headerlink" title="2.修改  .bash_profile"></a>2.修改  .bash_profile</h2><p>sudo vim ~/.bash_profile</p><p>然后把以下代码添加到bash_profile脚本最后面：</p><p>export PATH=”/Applications/MAMP/bin/php/php5.5.38/bin:$PATH”</p><p>注：路径就是MAMP 相关对应PHP版本的路径  </p><h2 id="3-source-bash-profile-使其生效"><a href="#3-source-bash-profile-使其生效" class="headerlink" title="3.source  ~/.bash_profile 使其生效"></a>3.source  ~/.bash_profile 使其生效</h2><h2 id="4-再次执行-which-php"><a href="#4-再次执行-which-php" class="headerlink" title="4. 再次执行 which php"></a>4. 再次执行 which php</h2><p>检查路径是否已经切换成功   注意：如果你安装了zsh，会出现重新打开terminal窗口时会发现php又跳回自带的PHP 原因；这是terminal init的时候并不会执行<del>/.bash_profile、</del>/.bashrc等脚本了，这是因为其默认启动执行脚本变为了～/.zshrc。 方案：vim ~/.zshrc，在后面追加：</p><p>source ~/.bash_profile</p><p><img src="https://upload-images.jianshu.io/upload_images/6188107-a418765145532b96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/416/format/webp">   转自：<a href="https://www.jianshu.com/p/cb5b489c8d93?utm%5C_campaign=maleskine&amp;utm%5C_content=note&amp;utm%5C_medium=seo%5C_notes&amp;utm%5C_source=recommendation">https://www.jianshu.com/p/cb5b489c8d93?utm\_campaign=maleskine&amp;utm\_content=note&amp;utm\_medium=seo\_notes&amp;utm\_source=recommendation</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> mac </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mac os终端常用命令记录</title>
+      <link href="2018/11/17/mac-osterminal/"/>
+      <url>2018/11/17/mac-osterminal/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-终端中删除非空文件夹"><a href="#1-终端中删除非空文件夹" class="headerlink" title="1.终端中删除非空文件夹"></a>1.终端中删除非空文件夹</h2><p>rm -r -f filename</p><p>或者使用管理员账号</p><p>sudo rm -r -f filename</p><p> </p><h2 id="2-终端进入-vim"><a href="#2-终端进入-vim" class="headerlink" title="2.终端进入 vim"></a>2.终端进入 vim</h2><p>vim xx.xx/vi xx.xx</p><p>亦或者使用管理员账号</p><p>sudo vim xx.xx/vi xx.xx</p><p> </p><h2 id="3-终端退出-vim"><a href="#3-终端退出-vim" class="headerlink" title="3.终端退出 vim"></a>3.终端退出 vim</h2><p>按下ESC后输出，才能进入命令模式 保存并退出</p><p>:qw!</p><p>不保存退出</p><p>:q</p><p>注： 命令后面 + ! 是强制的意思</p><h2 id="4-终端中解压命令"><a href="#4-终端中解压命令" class="headerlink" title="4.终端中解压命令"></a>4.终端中解压命令</h2><h3 id="tar-（注：tar是打包，不是压缩！）"><a href="#tar-（注：tar是打包，不是压缩！）" class="headerlink" title="tar （注：tar是打包，不是压缩！）"></a>tar （注：tar是打包，不是压缩！）</h3><p>解包：tar xvf FileName.tar<br>打包：tar cvf FileName.tar DirName</p><h3 id="gz"><a href="#gz" class="headerlink" title=".gz"></a>.gz</h3><p>解压1：gunzip FileName.gz<br>解压2：gzip -d FileName.gz<br>压缩：gzip FileName</p><h3 id="tar-gz-和-tgz"><a href="#tar-gz-和-tgz" class="headerlink" title=".tar.gz 和 .tgz"></a>.tar.gz 和 .tgz</h3><p>解压：tar zxvf FileName.tar.gz<br>压缩：tar zcvf FileName.tar.gz DirName</p><h3 id="bz2"><a href="#bz2" class="headerlink" title=".bz2"></a>.bz2</h3><p>解压1：bzip2 -d FileName.bz2<br>解压2：bunzip2 FileName.bz2<br>压缩： bzip2 -z FileName</p><p> </p><h3 id="tar-bz2"><a href="#tar-bz2" class="headerlink" title=".tar.bz2"></a>.tar.bz2</h3><p>解压：tar jxvf FileName.tar.bz2<br>压缩：tar jcvf FileName.tar.bz2 DirName</p><p> </p><h3 id="bz"><a href="#bz" class="headerlink" title=".bz"></a>.bz</h3><p>解压1：bzip2 -d FileName.bz<br>解压2：bunzip2 FileName.bz</p><p> </p><h3 id="tar-bz"><a href="#tar-bz" class="headerlink" title=".tar.bz"></a>.tar.bz</h3><p>解压：tar jxvf FileName.tar.bz</p><p> </p><h3 id="Z"><a href="#Z" class="headerlink" title=".Z"></a>.Z</h3><p>解压：uncompress FileName.Z<br>压缩：compress FileName</p><p> </p><h3 id="tar-Z"><a href="#tar-Z" class="headerlink" title=".tar.Z"></a>.tar.Z</h3><p>解压：tar Zxvf FileName.tar.Z<br>压缩：tar Zcvf FileName.tar.Z DirName</p><p> </p><h3 id="zip"><a href="#zip" class="headerlink" title=".zip"></a>.zip</h3><p>解压：unzip FileName.zip<br>压缩：zip FileName.zip DirName</p><p> </p><h3 id="lha"><a href="#lha" class="headerlink" title=".lha"></a>.lha</h3><p>解压：lha -e FileName.lha<br>压缩：lha -a FileName.lha FileName</p><p> </p><h3 id="rpm"><a href="#rpm" class="headerlink" title=".rpm"></a>.rpm</h3><p>解包：rpm2cpio FileName.rpm  cpio -div</p><p> </p><h3 id="deb"><a href="#deb" class="headerlink" title=".deb"></a>.deb</h3><p>解包：ar p FileName.deb data.tar.gz  tar zxf -</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> mac </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git报错记录</title>
+      <link href="2018/10/12/gitreporterrors/"/>
+      <url>2018/10/12/gitreporterrors/</url>
+      
+        <content type="html"><![CDATA[<p>Q：The file will have its original line endings in your working directory. S：</p><p>git rm -r –cached ./</p><p>git config core.autocrlf false</p><p>git add ./</p><p>  Q: You have not concluded your merge (MERGE_HEAD exists). Please, commit your changes before you can merge. Analytical : 错误可能是因为以前pull下来的代码没有自动合并导致的 S: 1.<strong>保留你本地的修改</strong></p><p>git merge –abort<br>git reset –merge</p><p>合并后记得一定要提交这个本地的合并，然后在获取线上仓库</p><p>git pull</p><p>2.<strong>.down下线上代码版本,抛弃本地的修改</strong></p><p>git fetch –all</p><p>git reset –hard origin/master</p><p>git fetch</p><p>  Q: The file will have its original line endings in your working directory. Analytical : 原因是路径中存在 / 的符号转义问题，false就是不转换符号默认是true，相当于把路径的 / 符号进行转义，这样添加的时候就有问题 S:</p><p>git config –global core.autocrlf false</p><p>  Q: fatal: remote origin already exists. S: 先删除</p><p>git remote rm origin</p><p>再次执行上次操作即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git记录</title>
+      <link href="2018/10/12/gitrecord/"/>
+      <url>2018/10/12/gitrecord/</url>
+      
+        <content type="html"><![CDATA[<p>上一篇文章已经写好了，如何配置。这篇文章主要记录日常使用的git 命令。</p><h2 id="一、提交"><a href="#一、提交" class="headerlink" title="一、提交"></a><strong>一、提交</strong></h2><p>已有的一个项目，要把它托管到git（git也有）上去。 1.在工程的路径下 git init ： 建一个裸仓库 2.git remote add origin 远程仓库地址 ：将本地的仓库和远程仓库关联 3.git pull origin master :将远程仓库的东西拉下来，与本地仓库合并 注：因为两个仓库都有代码 可能冲突 比如 README.md 可自由选择保留那个 // 下面三步常规操作 4.git add  .    :将文件存进暂存区 5.git commit -am “提交的信息” 6.git push -u origin master    :提交到远程仓库</p><h2 id="二、更新"><a href="#二、更新" class="headerlink" title="二、更新"></a>二、更新</h2><p>把本地代码更新到 git 上面</p><ol><li> git status:  显示工作树的差异，即代码有无变更</li><li> git add  .    :将文件存进暂存区</li><li> git commit -m “提交的信息”</li><li> git push</li></ol><h2 id="三、拉取"><a href="#三、拉取" class="headerlink" title="三、拉取"></a>三、拉取</h2><p>暴力的从git上面拉取，直接更新，不通过分支 1.git pull:  把远程代码拉到本地</p><h2 id="四、git基础配置"><a href="#四、git基础配置" class="headerlink" title="四、git基础配置"></a>四、git基础配置</h2><p>1.git config –list：查看git配置信息 2.git config user.name :  查看当前用户名 3.git config user.email:   查看当前邮箱 4.git config –global user.name “name”:  全局配置用户名 5.git config –global user.email “<a href="mailto:&#120;&#x78;&#x40;&#120;&#x78;&#46;&#99;&#x6f;&#109;">&#120;&#x78;&#x40;&#120;&#x78;&#46;&#99;&#x6f;&#109;</a>“:  全局配置邮箱  </p><h2 id="五、从git-gitlab等上面拉取代码到本地"><a href="#五、从git-gitlab等上面拉取代码到本地" class="headerlink" title="五、从git/gitlab等上面拉取代码到本地"></a>五、从git/gitlab等上面拉取代码到本地</h2><p>1.git clone http://*******.git 2.输入邮箱、密码即可    </p><h2 id="六、git取消追踪已上传文件"><a href="#六、git取消追踪已上传文件" class="headerlink" title="六、git取消追踪已上传文件"></a>六、git取消追踪已上传文件</h2><p>1. （node_modules文件夹示例）列出你需要取消跟踪的文件，查看列表</p><p>git rm -r -n –cached node_modules</p><p>  2.  取消缓存不想要跟踪的文件</p><p>git rm -r –cached node_modules</p><p>  3.根目录下新建.gitignore，添加忽略文件 4.提交  </p><h2 id="七、放弃本地修改，直接覆盖"><a href="#七、放弃本地修改，直接覆盖" class="headerlink" title="七、放弃本地修改，直接覆盖"></a>七、放弃本地修改，直接覆盖</h2><p>git reset –hard</p><p> </p><h2 id="八、新建远程分支"><a href="#八、新建远程分支" class="headerlink" title="八、新建远程分支"></a>八、新建远程分支</h2><p>git checkout -b [branch_name]  //新建本地为[branch_name]的分支并切换至[branch_name]分支</p><p> </p><h2 id="九、推送当前分支并建立与远程上游的跟踪"><a href="#九、推送当前分支并建立与远程上游的跟踪" class="headerlink" title="九、推送当前分支并建立与远程上游的跟踪"></a>九、推送当前分支并建立与远程上游的跟踪</h2><p>git push –set-upstream origin [branch_name]</p><p> </p><h2 id="十、合并分支"><a href="#十、合并分支" class="headerlink" title="十、合并分支"></a>十、合并分支</h2><p>1.切换分支</p><p>git checkout 1</p><p>2.合并分支</p><p>git merge 2</p><p>注： 1为主分支，2为要合并到1的分支 3. 同步  </p><h2 id="十一、删除分支"><a href="#十一、删除分支" class="headerlink" title="十一、删除分支"></a>十一、删除分支</h2><p>1.删除远程分支</p><p>git push origin –delete [branch_name]</p><p>2.删除本地分支</p><p>git branch -d [branch_name]</p><p>3.查看本地分支验证</p><p>git branch -r</p><p> </p><h2 id="十二、查看远程分支"><a href="#十二、查看远程分支" class="headerlink" title="十二、查看远程分支"></a>十二、查看远程分支</h2><p>1.查看远程分支</p><p> git branch -r</p><p>2.查看远程分支不全，更新</p><p>git fetch</p><p> </p><h2 id="十三、远程拉取指定分支-branch-name-，并且创建指定分支-branch-name-，并切换"><a href="#十三、远程拉取指定分支-branch-name-，并且创建指定分支-branch-name-，并切换" class="headerlink" title="十三、远程拉取指定分支[branch_name]，并且创建指定分支[branch_name]，并切换"></a>十三、远程拉取指定分支[branch_name]，并且创建指定分支[branch_name]，并切换</h2><p>git checkout -b [branch_name] origin/[branch_name]</p><p> </p><h2 id="十四、取消指定的提交内容"><a href="#十四、取消指定的提交内容" class="headerlink" title="十四、取消指定的提交内容"></a>十四、取消指定的提交内容</h2><p>分两种情况，因为 commit 分为两种：一种是常规的 commit，也就是使用 git commit 提交的 commit；另一种是 merge commit，在使用 git merge 合并两个分支之后，你将会得到一个新的 merge commit 1.revert 常规 commit</p><p>git revert <commit id></p><p>git 会生成一个新的 commit，将指定的 commit 内容从当前分支上撤除。   2.revert merge commit 但如果直接使用 git revert <commit id>，git 也不知道到底要撤除哪一条分支上的内容，这时需要指定一个 parent number 标识出”主线”，主线的内容将会保留，而另一条分支的内容将被 revert。需要注意的是 -m 选项接收的参数是一个数字，数字取值为 1 和 2，也就是 Merge 行里面列出来的第一个还是第二个。 我们要 revert will-be-revert 分支上的内容，即 保留主分支，应该设置主分支为主线，操作如下：</p><p>git revert -m 1 <commit id></p><p><a href="http://blog.psjay.com/posts/git-revert-merge-commit/">参考</a>    </p><h2 id="十五、从某次提交中创建分支"><a href="#十五、从某次提交中创建分支" class="headerlink" title="十五、从某次提交中创建分支"></a>十五、从某次提交中创建分支</h2><p>git checkout [commit id] -b [branch_name]</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其他 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git的安装配置</title>
+      <link href="2018/10/11/gitinstallationconfiguration/"/>
+      <url>2018/10/11/gitinstallationconfiguration/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a><strong>一、安装</strong></h2><p>直接进入官网 <a href="https://git-scm.com/downloads/">https://git-scm.com/downloads/</a> 下载，被墙的烈害，没有梯子可以下载网友分享的。 安装的话，一路默认，除了  <strong>设置环境变量：选择使用什么样的命令行工具，一般情况下选择默认，使用Git Bash</strong> 这个要注意之外  </p><h2 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a><strong>二、配置</strong></h2><p>为了推送、拉取足够快，选择国内的代码托管平台码云，注册过程省略。直接进行配置，从码云的设置中找到SSH公钥，进行添加（码云有足够简单的教程）。 以window系统为例子，在要建立代码仓库的地方鼠标右键，选择  Git Bash Here，进入终端之后，输入</p><p>ssh-keygen -t rsa -C “<a href="mailto:&#x78;&#120;&#120;&#x78;&#x78;&#64;&#x78;&#120;&#120;&#120;&#120;&#x2e;&#99;&#111;&#x6d;">&#x78;&#120;&#120;&#x78;&#x78;&#64;&#x78;&#120;&#120;&#120;&#120;&#x2e;&#99;&#111;&#x6d;</a>“</p><p>安照提示完成三次回车，即可生成 ssh key。通过查看 <code>~/.ssh/id_rsa.pub</code> 文件内容，获取到你的 public key   <img src="https://images.gitee.com/uploads/images/2018/0814/170141_5aa5bc98_551147.png" alt="SSH生成" title="SSH生成">   复制生成后的 ssh key，通过项目主页 <strong>「管理」-&gt;「部署公钥管理」-&gt;「添加部署公钥」</strong> ，添加生成的 public key 添加到项目中。  </p><h2 id="三、检测"><a href="#三、检测" class="headerlink" title="三、检测"></a><strong>三、检测</strong></h2><p>在终端（Terminal）中输入</p><p>ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#101;&#x65;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#101;&#x65;&#46;&#x63;&#x6f;&#x6d;</a></p><p>若返回 <code>Hi XXX! You&#39;ve successfully authenticated, but Gitee.com does not provide shell access.</code> 内容，则证明添加成功。  </p><h2 id="四、clone-项目"><a href="#四、clone-项目" class="headerlink" title="四、clone 项目"></a>四、clone 项目</h2><p>在已经创建好的项目中，选择 clone  复制 SSH链接。在要建立代码仓库的地方鼠标右键，选择  Git Bash Here，进入终端之后 输入</p><p>git clone <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#101;&#x65;&#x2e;&#x63;&#111;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#101;&#x65;&#x2e;&#x63;&#111;&#109;</a>:dadsasdasdasdasd</p><p><a href="mailto:&#103;&#105;&#116;&#x40;&#103;&#105;&#116;&#101;&#101;&#46;&#x63;&#x6f;&#109;">&#103;&#105;&#116;&#x40;&#103;&#105;&#116;&#101;&#101;&#46;&#x63;&#x6f;&#109;</a>:dadsasdasdasdasd 即复制的SSH链接 这样即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其他 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS闭包的理解</title>
+      <link href="2018/10/07/understandingofclosure/"/>
+      <url>2018/10/07/understandingofclosure/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、前提"><a href="#一、前提" class="headerlink" title="一、前提"></a>一、前提</h2><p>JS作用域分为全局作用域以及局部作用域。<strong>局部作用域内部可以访问全局作用域的变量，而局部作用域外面无法访问局部作用域的变量</strong>。这个根本原因在于JS的作用域是以作用域链的形式存在，子作用域可以访问父作用域的数据，而父作用域不可以访问子作用域的数据，全局作用域是作为最上级的父作用域，所以采用以上的情况。</p><h2 id="二、闭包"><a href="#二、闭包" class="headerlink" title="二、闭包"></a>二、闭包</h2><p>所以我理解的闭包就是——闭包是指一个可以访问另外一个函数作用域中的变量<strong>的函数</strong>（定义在函数内部的函数）。 或者说闭包打破了JS的作用域链的模式。  </p><h2 id="三、-用处"><a href="#三、-用处" class="headerlink" title="三、 用处"></a>三、 用处</h2><p>用来保存一个需要持久保存的变量（封装JS插件）。   网络上关于闭包的解释和函数有很多，这里只是简单的说明我的理解情况。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 原生JS </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>简单说明MVC/MVP/MVVM</title>
+      <link href="2018/10/02/mvc-mvp-mvvm/"/>
+      <url>2018/10/02/mvc-mvp-mvvm/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一．来源"><a href="#一．来源" class="headerlink" title="一．来源"></a><strong>一．来源</strong></h2><p>MVC，MVP，MVVM　是三种常见的前端架构模式，它通过分离关注点来改进代码组织方式。MVC称得上业内传统的设计模式，MVP，MVVM　皆是从MVC中演化而来。  </p><h2 id="二．MVC"><a href="#二．MVC" class="headerlink" title="二．MVC"></a><strong>二．MVC</strong></h2><p>MVC即 Model-View-Controller ，核心部分分为 Model（数据）、View（视图）、Controller（控制），这三部分的通讯关系如下图（盗用阮一峰老师的解释图）。   <img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015020105.png"></p><ol><li> View 传送指令到 Controller</li><li> Controller 完成业务逻辑后，要求 Model 改变状态</li><li> Model 将新的数据发送到 View，用户得到反馈</li></ol><p> </p><h2 id="二．MVP"><a href="#二．MVP" class="headerlink" title="二．MVP"></a><strong>二．MVP</strong></h2><p>MVP 模式将 Controller 改名为 Presenter，同时改变了通信方向。 <img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015020109.png"> 1. 各部分之间的通信，都是双向的。 2. View 与 Model 不发生联系，都通过 Presenter 传递。 3. View 非常薄，不部署任何业务逻辑，称为”被动视图”（Passive View），即没有任何主动性，而 Presenter非常厚，所有逻辑都部署在那里。  </p><h2 id="三．MVVM"><a href="#三．MVVM" class="headerlink" title="三．MVVM"></a><strong>三．MVVM</strong></h2><p>MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。<img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015020110.png"> 唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel   注： 以上大多数摘自阮一峰老师的博客：<a href="http://www.ruanyifeng.com/blog/2015/02/mvcmvp/_mvvm.html">http://www.ruanyifeng.com/blog/2015/02/mvcmvp\_mvvm.html</a>  </p><h2 id="四．个人习惯"><a href="#四．个人习惯" class="headerlink" title="四．个人习惯"></a><strong>四．个人习惯</strong></h2><p>就我使用习惯而言，使用更多的是MVP（原生JS）、MVVM（VUE）。并没有使用MVC的经验，在于更习惯视图（V）和数据（M）分开，减少耦合，将更核心的代码（逻辑）放到 P/VM 上面。当然也都不是万能的，一般在公司的项目偏web应用较多，使用MVP虽然代码分离的很舒服，但是项目越大，逻辑越复杂，这个P 就越发的臃肿，所以真的感觉MVVM中VM非常的舒服。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 设计模式 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>轮播图实现原理</title>
+      <link href="2018/09/13/broadcastprinciple/"/>
+      <url>2018/09/13/broadcastprinciple/</url>
+      
+        <content type="html"><![CDATA[<p>轮播图可以说是最平常最基础不过的东西了，不论是web还是App方面，我本人也是拿来主义，是时候改变了，水平有限，总结出两种方案。 PS: 方案都很简陋，没有左右键切换，也没有下面表示进行的小圆点，只记录原理。 一.  通过display 控制 所谓轮播图就是将要展示的图片做好队列，但是窗口有限，一次只能展示一个图片，那么如果说通过display 设置 当前要展示的图片为 “block”，其他不展示的图片为 “none”，应该就解决这个问题了。 HTML代码：</p><pre><code>&lt;div class=&quot;main&quot; id=&quot;main&quot;&gt;    &lt;div class=&quot;banner&quot; id=&quot;banner&quot;&gt;        &lt;img src=&quot;./images/1.png&quot; alt=&quot;&quot; class=&quot;banner-slide&quot;&gt;        &lt;img src=&quot;./images/2.png&quot; alt=&quot;&quot; class=&quot;banner-slide&quot;&gt;        &lt;img src=&quot;./images/3.png&quot; alt=&quot;&quot; class=&quot;banner-slide&quot;&gt;        &lt;img src=&quot;./images/4.png&quot; alt=&quot;&quot; class=&quot;banner-slide&quot;&gt;    &lt;/div&gt;&lt;/div&gt;</code></pre><p>  CSS代码：  </p><pre><code>    .main &#123;        width: 1200px;        height: auto;        margin: 50px auto;    &#125;    .banner &#123;        width: 600px;        height: 460px;        overflow: hidden;    &#125;    .banner-slide &#123;        width: 600px;        height: 460px;    &#125;</code></pre><p>  JS代码：</p><pre><code>    window.onload = function () &#123;        // 设置定时器        var timer = null;        // 设置 要优先显示 图片位置        var index = 0;        // 存储在内存中        var pics = document.getElementsByClassName(&quot;banner-slide&quot;);        function slideImg() &#123;            var main = document.getElementById(&quot;main&quot;);            var banner = document.getElementById(&quot;banner&quot;);            // 根据鼠标事件来 设置显示与否            main.onmouseover = function () &#123;                stopAutoPlay();            &#125;            main.onmouseout = function () &#123;                startAutoPlay();            &#125;            main.onmouseout();        &#125;        //开始播放轮播图        function startAutoPlay() &#123;            timer = setInterval(function () &#123;                index++;                if (index &gt; 3) &#123;                    index = 0;                &#125;                changeImg();            &#125;, 2000);        &#125;        //暂停播放        function stopAutoPlay() &#123;            if (timer) &#123;                clearInterval(timer);            &#125;        &#125;        //改变轮播图        function changeImg() &#123;            for (var i = 0; i &lt; pics.length; i++) &#123;                pics\[i\].style.display = &quot;none&quot;;            &#125;            pics\[index\].style.display = &quot;block&quot;;        &#125;        slideImg();    &#125;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 原生JS </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Js插件封装</title>
+      <link href="2018/09/11/plugin/"/>
+      <url>2018/09/11/plugin/</url>
+      
+        <content type="html"><![CDATA[<p>近日总结的相对简单的JS插件封装的模板  </p><p>;(function(){<br>    var demo  = function (options) {<br>        if(!(this instanceof demo)){return new demo(options)};<br>        this.options = this.extend({<br>            ‘x’: 1,<br>            ‘y’: 2,<br>            ‘z’: 3<br>        },options)<br>        //初始化<br>        this.init();<br>    }<br>    demo.prototype = {<br>        init: function () {<br>            console.log(this.options.x)<br>            this.show()<br>            this.hide()<br>        },<br>        // 参数合并方法体<br>        extend: function (obj,obj2) {<br>            for (var key in obj2) {<br>                obj[key] = obj2[key]<br>            }<br>            return obj<br>        },<br>        show: function () {<br>            console.log(‘展开’)<br>        },<br>        hide: function () {<br>            console.log(‘关闭’)<br>        }<br>    }<br>    //暴露对象<br>    window.demo = demo<br>}())<br>// 使用方法 demo(“args”) 和 new demo(“args”)<br>demo({<br>    “x”: “newX”,<br>    “y”: “newY”,<br>    “c”:”newC”,<br>    fn1:function () {<br>        console.log(“start”)<br>    },<br>    fn2:function () {<br>        console.log(“end”)<br>    }<br>});</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 原生JS </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue项目初始化</title>
+      <link href="2018/09/07/vueinit/"/>
+      <url>2018/09/07/vueinit/</url>
+      
+        <content type="html"><![CDATA[<p>默认使用 webpack 和 npm</p><h2 id="Vue-cli初始化"><a href="#Vue-cli初始化" class="headerlink" title="Vue-cli初始化"></a><strong>Vue-cli初始化</strong></h2><p>1、利用npm包管理工具，进行安装</p><p>npm install vue-cli -g</p><p>-g 代表全局 安装好vue的脚手架以后，我们就可以在命令行中使用一个命令：vue</p><h2 id="Vue-初始化"><a href="#Vue-初始化" class="headerlink" title="Vue 初始化"></a><strong>Vue 初始化</strong></h2><p>语法： vue init webpack  demoName demoName 代表创建项目名称，如果不写则直接在该目录下创建</p><p>vue init webpack</p><p><img src="http://jindk.wang/blog/wp-content/uploads/2018/09/vue-init.png"> 如上图所示，输入完成命令后会有一些配置选项，全部填完后即可等待安装</p><h2 id="Vuex-初始化"><a href="#Vuex-初始化" class="headerlink" title="Vuex 初始化"></a><strong>Vuex 初始化</strong></h2><p>vuex是一个专门为vue.js设计的集中式状态管理架构。状态？我把它理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。 1、利用npm包管理工具，进行安装 vuex</p><p>npm install vuex –save</p><p><img src="http://jindk.wang/blog/wp-content/uploads/2018/09/vuex-init.png"> 注： - -save 为保存 2、新建一个store文件夹（这个不是必须的），并在文件夹下新建store.js文件，文件中引入我们的vue和vuex</p><p>import Vue from ‘vue’;<br>import Vuex from ‘vuex’;</p><p>  3、使用我们vuex，引入之后用Vue.use进行引用</p><p>Vue.use(Vuex);</p><p>4、在main.js 中引入新建的vuex文件</p><p>import store from ‘./vuex/store’</p><p>5、再然后 , 在实例化 Vue对象时加入 store 对象</p><p>new Vue({<br>   el: ‘#app’,<br>   router,<br>   store,//使用store<br>   template: ‘<App/>‘,<br>   components: { App }<br>})</p><p> </p><h2 id="安装配置sass"><a href="#安装配置sass" class="headerlink" title="安装配置sass"></a><strong>安装配置sass</strong></h2><p>1、利用npm包管理工具，进行安装 依赖</p><p>npm install –save-dev sass-loader<br>//sass-loader依赖于node-sass<br>npm install –save-dev node-sass</p><p>2、利用build文件夹下的webpack.base.conf.js的rules里面添加配置</p><p>{<br>  test: /\.sass$/,<br>  loaders: [‘style’, ‘css’, ‘sass’]<br>}</p><p>3、 vue 文件修改 style 标签</p><style lang="scss" scoped="" type="text/css"></style>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>http缓存</title>
+      <link href="2018/09/06/httpcache/"/>
+      <url>2018/09/06/httpcache/</url>
+      
+        <content type="html"><![CDATA[<p>本文主要讲解浏览器端的缓存，缓存的作用是不言而喻的，能够极大的改善网页性能，提高用户体验。</p><h2 id="1、浏览器缓存"><a href="#1、浏览器缓存" class="headerlink" title="1、浏览器缓存"></a><strong>1、浏览器缓存</strong></h2><p>缓存这东西，第一次必须获取到资源后，然后根据返回的信息来告诉如何缓存资源，可能采用的是强缓存，也可能告诉客户端浏览器是协商缓存，这都需要根据响应的header内容来决定的。下面用两幅图来描述浏览器的缓存是怎么玩的，让大家有个大概的认知。 浏览器第一次请求时：</p><h2 id=""><a href="#" class="headerlink" title=""></a><strong><img src="http://jindk.wang/blog/wp-content/uploads/2018/09/408483-20160525182843100-1556227104-300x269.png"></strong></h2><p>浏览器后续在进行请求时： <img src="http://jindk.wang/blog/wp-content/uploads/2018/09/408483-20160525182943272-204994049-300x286.png"> 从上图可以知道，浏览器缓存包含两种类型，即强缓存（也叫本地缓存）和协商缓存，浏览器在第一次请求发生后，再次请求时：</p><ul><li>  浏览器在请求某一资源时，会先获取该资源缓存的header信息，判断是否命中强缓存（cache-control和expires信息），若命中直接从缓存中获取资源信息，包括缓存header信息；本次请求根本就不会与服务器进行通信；在firebug下可以查看某个具有强缓存资源返回的信息，例如本地firebug查看的一个强缓存js文件<img src="http://jindk.wang/blog/wp-content/uploads/2018/09/15362456301-300x211.png"></li><li>  如果没有命中强缓存，浏览器会发送请求到服务器，请求会携带第一次请求返回的有关缓存的header字段信息（Last-Modified/If-Modified-Since和Etag/If-None-Match），由服务器根据请求中的相关header信息来比对结果是否协商缓存命中；若命中，则服务器返回新的响应header信息更新缓存中的对应header信息，但是并不返回资源内容，它会告知浏览器可以直接从缓存获取；否则返回最新的资源内容</li></ul><p>强缓存与协商缓存的区别，可以用下表来进行描述：</p><p><strong>获取资源形式</strong></p><p><strong>状态码</strong></p><p><strong>发送请求到服务器</strong></p><p><strong>强缓存</strong></p><p> 从缓存取</p><p> 200（from cache）</p><p>否，直接从缓存取</p><p><strong>协商缓存</strong></p><p> 从缓存取</p><p> 304（not modified）</p><p>是，正如其名，通过服务器来告知缓存是否可用</p><p> </p><h2 id="2、强缓存相关的header字段"><a href="#2、强缓存相关的header字段" class="headerlink" title="2、强缓存相关的header字段"></a><strong>2、强缓存相关的header字段</strong></h2><p>强缓存上面已经介绍了，直接从缓存中获取资源而不经过服务器；与强缓存相关的header字段有两个：</p><ol><li> <strong>expires</strong>，这是http1.0时的规范；它的值为一个绝对时间的GMT格式的时间字符串，如Mon, 10 Jun 2015 21:31:12 GMT，如果发送请求的时间在expires之前，那么本地缓存始终有效，否则就会发送请求到服务器来获取资源</li><li><strong>cache-control：max-age=number</strong>，这是http1.1时出现的header信息，主要是利用该字段的max-age值来进行判断，它是一个相对值；资源第一次的请求时间和Cache-Control设定的有效期，计算出一个资源过期时间，再拿这个过期时间跟当前的请求时间比较，如果请求时间在过期时间之前，就能命中缓存，否则就不行；cache-control除了该字段外，还有下面几个比较常用的设置值：<ul><li>  no-cache：不使用本地缓存。需要使用缓存协商，先与服务器确认返回的响应是否被更改，如果之前的响应中存在ETag，那么请求的时候会与服务端验证，如果资源未被更改，则可以避免重新下载。</li><li>  no-store：直接禁止游览器缓存数据，每次用户请求该资源，都会向服务器发送一个请求，每次都会下载完整的资源。</li><li>  public：可以被所有的用户缓存，包括终端用户和CDN等中间代理服务器。</li><li>  private：只能被终端用户的浏览器缓存，不允许CDN等中继缓存服务器对其缓存。</li></ul></li></ol><p>注意：如果cache-control与expires同时存在的话，cache-control的优先级高于expires</p><h2 id="3、协商缓存相关的header字段"><a href="#3、协商缓存相关的header字段" class="headerlink" title="3、协商缓存相关的header字段"></a><strong>3、协商缓存相关的header字段</strong></h2><p>协商缓存都是由服务器来确定缓存资源是否可用的，所以客户端与服务器端要通过某种标识来进行通信，从而让服务器判断请求资源是否可以缓存访问，这主要涉及到下面两组header字段，<strong>这两组搭档都是成对出现的，即第一次请求的响应头带上某个字段（Last-Modified或者Etag），则后续请求则会带上对应的请求字段（If-Modified-Since或者If-None-Match），若响应头没有Last-Modified或者Etag字段，则请求头也不会有对应的字段</strong>。</p><ol><li><strong>Last-Modified/If-Modified-Since</strong> 二者的值都是GMT格式的时间字符串，具体过程：<ul><li><ul><li>  浏览器第一次跟服务器请求一个资源，服务器在返回这个资源的同时，在respone的header加上Last-Modified的header，这个header表示这个资源在服务器上的最后修改时间</li><li>  浏览器再次跟服务器请求这个资源时，在request的header上加上If-Modified-Since的header，这个header的值就是上一次请求时返回的Last-Modified的值</li><li>  服务器再次收到资源请求时，根据浏览器传过来If-Modified-Since和资源在服务器上的最后修改时间判断资源是否有变化，如果没有变化则返回304 Not Modified，但是不会返回资源内容；如果有变化，就正常返回资源内容。当服务器返回304 Not Modified的响应时，response header中不会再添加Last-Modified的header，因为既然资源没有变化，那么Last-Modified也就不会改变，这是服务器返回304时的response header</li><li>  浏览器收到304的响应后，就会从缓存中加载资源</li><li>  如果协商缓存没有命中，浏览器直接从服务器加载资源时，Last-Modified的Header在重新加载的时候会被更新，下次请求时，If-Modified-Since会启用上次返回的Last-Modified值</li></ul></li></ul></li><li> <strong>Etag/If-None-Match</strong> 这两个值是由服务器生成的每个资源的唯一标识字符串，只要资源有变化就这个值就会改变；其判断过程与<strong>Last-Modified/If-Modified-Since</strong>类似，与Last-Modified不一样的是，当服务器返回304 Not Modified的响应时，由于ETag重新生成过，response header中还会把这个ETag返回，即使这个ETag跟之前的没有变化。</li></ol><h2 id="4、既生Last-Modified何生Etag"><a href="#4、既生Last-Modified何生Etag" class="headerlink" title="4、既生Last-Modified何生Etag"></a><strong>4、既生Last-Modified何生Etag</strong></h2><h2 id="你可能会觉得使用Last-Modified已经足以让浏览器知道本地的缓存副本是否足够新，为什么还需要Etag呢？HTTP1-1中Etag的出现主要是为了解决几个Last-Modified比较难解决的问题："><a href="#你可能会觉得使用Last-Modified已经足以让浏览器知道本地的缓存副本是否足够新，为什么还需要Etag呢？HTTP1-1中Etag的出现主要是为了解决几个Last-Modified比较难解决的问题：" class="headerlink" title="你可能会觉得使用Last-Modified已经足以让浏览器知道本地的缓存副本是否足够新，为什么还需要Etag呢？HTTP1.1中Etag的出现主要是为了解决几个Last-Modified比较难解决的问题："></a>你可能会觉得使用Last-Modified已经足以让浏览器知道本地的缓存副本是否足够新，为什么还需要Etag呢？HTTP1.1中Etag的出现主要是为了解决几个Last-Modified比较难解决的问题：</h2><ul><li>  一些文件也许会周期性的更改，但是他的内容并不改变(仅仅改变的修改时间)，这个时候我们并不希望客户端认为这个文件被修改了，而重新GET；</li><li>  某些文件修改非常频繁，比如在秒以下的时间内进行修改，(比方说1s内修改了N次)，If-Modified-Since能检查到的粒度是s级的，这种修改无法判断(或者说UNIX记录MTIME只能精确到秒)；</li><li>  某些服务器不能精确的得到文件的最后修改时间。</li></ul><p>这时，利用Etag能够更加准确的控制缓存，因为Etag是服务器自动生成或者由开发者生成的对应资源在服务器端的唯一标识符。 <strong>Last-Modified<strong><strong>与ETag</strong></strong>是可以一起使用的，服务器会优先验证ETag<strong><strong>，一致的情况下，才会继续比对Last-Modified</strong></strong>，最后才决定是否返回304</strong>。</p><h2 id="5、用户的行为对缓存的影响"><a href="#5、用户的行为对缓存的影响" class="headerlink" title="5、用户的行为对缓存的影响"></a><strong>5、用户的行为对缓存的影响</strong></h2><p>盗用网上的一张图，基本能描述用户行为对缓存的影响 <img src="https://images2015.cnblogs.com/blog/408483/201605/408483-20160525202949975-1541314356.png"><img src="http://jindk.wang/blog/wp-content/uploads/2018/09/408483-20160525202949975-1541314356-300x96.png"></p><h2 id="6、强缓存如何重新加载缓存缓存过的资源"><a href="#6、强缓存如何重新加载缓存缓存过的资源" class="headerlink" title="6、强缓存如何重新加载缓存缓存过的资源"></a><strong>6、强缓存如何重新加载缓存缓存过的资源</strong></h2><p>上面说到，使用强缓存时，浏览器不会发送请求到服务端，根据设置的缓存时间浏览器一直从缓存中获取资源，在这期间若资源产生了变化，浏览器就在缓存期内就一直得不到最新的资源，那么如何防止这种事情发生呢？ <strong>通过更新页面中引用的资源路径，让浏览器主动放弃缓存，加载新资源。</strong> 类似下图所示：</p><p>[cce_js]</p><link rel="stylesheet" href="a.css?v1.0.0"/><div class="foo">foo</div>\[/cce\_js\]<p>这样每次文件改变后就会生成新的query值，这样query值不同，也就是页面引用的资源路径不同了，之前缓存过的资源就被浏览器忽略了，因为资源请求的路径变了。  </p><h2 id="博客引用："><a href="#博客引用：" class="headerlink" title="博客引用："></a><strong>博客引用：</strong></h2><p><a href="http://www.cnblogs.com/wonyun/p/5524617.html">http://www.cnblogs.com/wonyun/p/5524617.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
       
     </entry>
     
@@ -36,6 +667,44 @@
             <tag> 网络 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Js数组去重</title>
+      <link href="2018/09/05/duplicateremoval/"/>
+      <url>2018/09/05/duplicateremoval/</url>
+      
+        <content type="html"><![CDATA[<p><strong>Js中使用算法的时候并不多，数组去重属于非常基础的功能，下面三种属于我感觉比较有意思的。</strong> 先定义要去重的数组</p><p>var arr = [1,12,12,5,2,2,9,3,10,3,12,13,20,2,1,20,2,1]</p><p>一、排序后相邻去除法</p><p>// 先排序<br>function sortByGradeDown(arrA, arrB) {<br>if (arrA == arrB) {<br>return 0<br>} else if (arrA &gt; arrB) {<br>return 1<br>} else if (arrA &lt; arrB) {<br>return -1<br>}<br>}<br>// 再去重<br>function duplicateRemoval(arr) {<br>var a = []<br>a.push(arr[0])<br>for (let i = 0; i &lt; arr.length; i++) {<br>if (i == arr.length - 1) {<br>} else {<br>if (arr[i] !== arr[i + 1]) {<br>a.push(arr[i + 1])<br>}<br>}<br>}<br>return a<br>}</p><p>  <strong>二、下标法</strong> 相对比较讨巧使用 indexOf() 方法</p><p>function duplicateRemoval (arr) {<br>   var a = []<br>   for (let i=0; i&lt;arr.length; i++) {<br>      if(a.indexOf(arr[i]) == -1) {<br> a.push(arr[i])<br>      }<br>   }<br>   return a<br>}</p><p>  <strong>三、借用数组特性</strong></p><p>var arr = [0,2,3,4,4,0,2];<br>var obj = {};<br>var tmp = [];<br>for(var i = 0 ;i&lt; arr.length;i++){<br>   if( !obj[arr[i]] ){<br>      obj[arr[i]] = 1;<br>      tmp.push(arr[i]);<br>   }<br>}<br>console.log(tmp);</p><p>    <strong>四、ES6 Set</strong> ES6的新方法</p><p>function duplicateRemoval (arr) {<br>    var x = new Set(arr)<br>    return […x]<br>}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 原生JS </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>http详解</title>
+      <link href="2018/09/05/httpdetails-1/"/>
+      <url>2018/09/05/httpdetails-1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什么是http协议："><a href="#什么是http协议：" class="headerlink" title="什么是http协议："></a><strong>什么是http协议：</strong></h2><p>引用百度百科的话说来就是：http协议其实就是超文本传输协议，超文本传输协议 (HTTP-Hypertext transfer protocol) 是一种详细规定了浏览器和万维网服务器之间互相通信的规则，通过因特网传送万维网文档的数据传送协议。目前我们使用的http版本是http/1.1其前身是http/1.0。关于两个版本不同，下面会不时提及。在整个iso传输层次模型中http处于最高层次，而tcp是处于下面一层传输层，也就是说http是基于tcp协议建立的连接，所以http传输建立之前需要先建立tcp连接，也就是三次握手，在建立tcp连接之后方可真正请求响应请求。</p><h2 id="http传输过程详解："><a href="#http传输过程详解：" class="headerlink" title="http传输过程详解："></a><strong>http传输过程详解：</strong></h2><p>当我们发送一个ajax请求，或者地址栏输入url后，我们的浏览器就给web服务器发送一个request，之后服务器处理完成后返回响应的response给浏览器。之后浏览器拿到数据进行解析里面数据从而生成我们页面或者组装数据。 期间传输还有可能经历了代理服务器（目前很多很多网站都用代理服务器，主要原因是其隐蔽。。）从而实现服务器端文件缓存。 http传输是面向连接的，也就是说如果连接没有中断，可以继续发送请求，这个设置可以在请求头Connection来设置，例如：我通过一个url请求了一个html页面之后， 经解析，html页面中包含对图片的请求，则会直接再向服务器发起请求而不必重新建立tcp连接。等到所有请求都就绪，方可完成一次页面加载或者请求完毕。</p><h2 id="url详解："><a href="#url详解：" class="headerlink" title="url详解："></a><strong>url详解：</strong></h2><p>无论是ajax请求还是地址栏输入url，都要用到请求地址，请求地址用来描述需要请求的资源位置以及筛选方式：大体结构如下 <a href="http://www.jindk.wang/blog/index.php/2018/09/05/duplicateremoval/index.html?name=yuchao&amp;age=26#modfiled">http://www.jindk.wang/blog/index.php/2018/09/05/duplicateremoval/index.html?name=yuchao&amp;age=26#modfiled</a> 这个url分为几个部分： http：表示底层使用的协议（如http、https、ftp） <a href="http://www.jindk.wang：表示服务器域名（或者是ip地址）">www.jindk.wang：表示服务器域名（或者是ip地址）</a> /blog/index.php/2018/09/05/duplicateremoval/：表示资源路径 ?name=yuchao&amp;age=26：发送给服务器数据 #modfiled：锚点  </p><h2 id="http消息结构："><a href="#http消息结构：" class="headerlink" title="http消息结构："></a>http消息结构：</h2><p>整个http消息结构分为request以及response两部分：为了便于讲解，我从w3c截取一个图如下： <img src="http://jindk.wang/blog/wp-content/uploads/2018/09/20131226161724328-300x197.png">                       这是从chrome的Network截图，且不管每个浏览器将其如何区分，按照我们看到的来分组： 上面第一部分是请求资源地址以及请求方式属于request部分 第二部分是返回状态码，属于response部分 第三部分是request部分，第四部分是response部分。 总体来说整个请求分为两个部分我们来分析里面主要的结构如下：</p><h2 id="request部分分析："><a href="#request部分分析：" class="headerlink" title="request部分分析："></a><strong>request部分分析：</strong></h2><p>请求的url即我们地址栏输入的url或者ajax请求的那个参数url。 请求方式：常用的有get、post以及head请求： head请求：head请求是一种返回不呈现数据的请求，也就是只请求一个报文头，通常用于请求一个文件去判断文件是否更新或者在我的项目中去请求服务器时间。 get与post比较： get请求一般都会用来查询资源信息，post请求一般会用来更新资源信息。 get提交数据方式是将参数放置url之后用&amp;来分开例如<a href="http://www.temas.com/myBlog/file/date.php?**name=yuchao&amp;age=26%EF%BC%8C">http://www.temas.com/myBlog/file/date.php?**name=yuchao&amp;age=26，</a>** post请求可以以对象字面量形式进行参数传输：{name:”yuchao”;age:”26”}，所以通过post方式发送的请求中包含内容这一项，而get请求直接将内容附在url之后 正是由于数据传输方式不同导致get传输数据量需要在url字节限制范围之内，而post几乎无限制。同时get参数放置于url中也不利于安全。 Accept：表示浏览器可以接受的类型，一般浏览器都会发给服务器*表示通配所有类型。text/html类型就表示我们常说的html文档。 当我们规定了一种类型时候而服务器没有这种类型可以返回，则会抛出一个406状态码的错误(no acceptable) Accept-Encoding：浏览器自身声明接受的编码方式，通常是压缩方法； Accept-Language：浏览器自身声明可以接受的语言例如中文：zh-CN； cookie:将cookie数据发送给服务器 Connection：可选值有： keep-alive:当一个网页打开完成后，客户端和服务器之间用于传输HTTP数据的TCP连接不会关闭，如果客户端再次访问这个服务器上的网页，会继续使用这一条已经建立的连接， 重新向该服务器发送请求时候不会重新经过三次握手建立链接，而是直接可以进行请求，这个请求时间段可以由服务器端Keep-Alive字段进行设置， 当过了这个时间段之后没有任何请求则关闭该连接。http1.0中默认是close，而目前应用的1.1版本中默认是keep-alive长连接。具体应用看下面response介绍该key； Connection: close  代表一个Request完成后，客户端和服务器之间用于传输HTTP数据的TCP连接会关闭， 当客户端再次发送Request，需要重新建立TCP连接。 User-Agent：客户端使用的浏览器以及操作系统 Cache-Control：浏览器缓存机制，一般会有max-age=值，或者no-cache或者public、private； If-Modified-Since：浏览器缓存内容最后修改时间; if-None-Match:和ETag一起工作，比较两者值 获取内容是否改变。  </p><h2 id="response部分分析："><a href="#response部分分析：" class="headerlink" title="response部分分析："></a><strong>response部分分析：</strong></h2><p>status：返回状态码， HTTP/1.1中定义了5类状态码， 状态码由三位数字组成，第一个数字定义了响应的类别 100-199  提示信息 - 表示请求已被成功接收，继续处理 200-299  成功 - 表示请求已被成功接收，理解，接受 300-399  重定向 - 要完成请求必须进行更进一步的处理 400-499  客户端错误 -  请求有语法错误或请求无法实现 500-599  服务器端错误 -   服务器未能实现合法的请求 我们来看一下一些常见的状态码： 200：OK，表明请求成功完成，所有资源成功发送给客户端； 302：重定向，例如google在中国被黑掉之后，只能转战利用香港服务器去请求，我们输入<a href="http://www.google.com,/">www.google.com，</a> 服务器就会返回302 Found，并且客户端接收到的response中location字段包含一个新的url地址，然后浏览器会根据这个地址重新发送一个新url的request； 304：使用的缓存文件 400：客户端请求与语法错误，不能被服务器解读； 403：服务器拒绝服务； 404：请求资源不存在； 500 Internal Server Error 服务器发生了不可预期的错误503 Server Unavailable 服务器当前不能处理客户端的请求，一段时间后可能恢复正常 Keep-Alive:<strong>长连接</strong>设置的值，如下图截图： <img src="http://jindk.wang/blog/wp-content/uploads/2018/09/20131227131225609-300x86.jpg">   有两个值：timeout以及max，例如：Keep-Alive:timeout=5,max=100，只有当connection为keep-alive并且服务端支持时候才会生效。 其中timeout表示超时时间，max表示最大连接数。即：在5秒之内服务器始终保持空闲连接，在这五秒之内可以发送请求不必重新建立连接，超过这个时间则会重新建立连接进行请求。 在保持持久连接之间每发送一个请求max值就会减少一个，直到为0为止则会自动断开连接。 一般实际开发中，这个值的设置要根据具体网页中嵌入的请求个数去设置：例如网页中有20个图片，五个外部脚本，三个css样式表。则可以根据传输速度设置超时时间5-20秒之内，max值设置为30-100； 这样设计初衷就是为了既能减少不必要的tcp连接，又能避免频繁的请求造成服务器连接池冗余。 这个值从根本上来说跟前端没有太多关系，但是在网站性能优化很是关键。选择多次建立tcp连接还是选择空余一段时间请求被浪费，就要看实际需求以及能否设置出一个合理的Keep-Alive值 Conent-Length：表示返回实体内容长度大小，一般应用在返回静态页面或者一张图片并且数据量不大时候被设置；大小为bite字节；例如一张图片的请求：Connent-Length：630；请求一个图片截图如下： <img src="http://jindk.wang/blog/wp-content/uploads/2018/09/20131227131410171-300x114.jpg"> Transfer-Encoding：即服务器端不是一个已知的固定的返回实体时候，服务器会一边产生数据，一边发送给客户端， 这时候服务器就需要用Transfer-Encoding：chunked分块编码来代替Conent-Length，设置该key后Content-Length就失效了。 对于前段来说只需关心返回的状态是否是成功即可，但是对于后台需要用到这个设置来判断客户端是否接受完全部数据。<a href="http://blog.csdn.net/zfrong/article/details/6070608">详细请参考</a> Date：服务器返回数据时间，我经常就用这个值来取得服务器时间 Etag：与if-modified-since配合使用； Last-Modified:作用： 用于指示资源的最后修改日期和时间。一般都用来处理缓存， Content-Type：作用：WEB服务器告诉浏览器自己响应的对象的类型和字符集,例如:Content-Type: text/html; charset=utf-8，Content-Type: image/jpeg server：指明服务器软件版本； Referer：告诉服务器该请求是在哪个链接发过来的，据此可以统计从某个页面跳转过来次数； X-powered0by：表示该网站开发技术  </p><h2 id="ajax修改获取header："><a href="#ajax修改获取header：" class="headerlink" title="ajax修改获取header："></a><strong>ajax修改获取header：</strong></h2><p>利用xmlHttp.setRequestHeader来设置request请求头：例如：xmlHttp.setRequestHeader(‘cache-control’,’no-cache’); 利用xmlHttp.getResponseHeader来获取response头信息;例如：xmlHttp.getResponseHeader(“Date”)； 另外 request.setCharacterEncoding(“UTF-8”)也可以设置发送到服务端数据编码格式（一般来说发送的编码格式跟服务端解析格式必须是一致的）  </p><h2 id="链接参考："><a href="#链接参考：" class="headerlink" title="链接参考："></a><strong>链接参考：</strong></h2><p><a href="https://blog.csdn.net/u012545279/article/details/17579155">https://blog.csdn.net/u012545279/article/details/17579155</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
       
     </entry>
     
