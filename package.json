@@ -1,6 +1,6 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "conor-blog",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "hexo generate",
@@ -19,6 +19,7 @@
     "hexo-generator-index": "^2.0.0",
     "hexo-generator-search": "^2.4.1",
     "hexo-generator-tag": "^1.0.0",
+    "hexo-migrator-wordpress": "^2.1.2",
     "hexo-renderer-ejs": "^1.0.0",
     "hexo-renderer-marked": "^4.0.0",
     "hexo-renderer-pug": "^1.0.0",

@@ -4,56 +4,77 @@ date: 2021-04-08 16:07:32
 tags:
 - 网络
 ---
+#### 1.全局安装 hexo.js
 
-## node.js git github  等相关不做表述
+注：node.js git github  等相关不做表述
 
-1.全局安装 hexo.js
+`npm install -g hexo-cli`
 
-npm install -g hexo-cli
+```
+npmiiii
+1
+1
+
+```
+
+```
+npm aaa
+```
+
+---
 
 
-2.检测hexo
+```
+if(userStatus) {
+   that.switchRoleAnchor()
+}
+1
+```
 
-hexo -v
+#### 2.检测hexo
 
-3.项目初始化
+`hexo -v`
 
-hexo init [myblog]
+#### 3.项目初始化
 
-cd [myblog]
+`hexo init [myblog]`
 
-4.安装依赖
+`cd [myblog]`
 
-npm i
+#### 4.安装依赖
 
-5.下载第三方主题
+`npm i`
 
-hexo-theme-Claudia
+#### 5.下载第三方主题
 
-https://github.com/Haojen/hexo-theme-Claudia
+`hexo-theme-Claudia`
 
-6.配置第三方
+`https://github.com/Haojen/hexo-theme-Claudia`
+
+#### **6.配置第三方**
 
 把下载好的解压文件夹放置到 themes 目录下
 
-同时修改 根目录 _config.yml 的配置文件 
+同时修改 根目录 _config.yml 的配置文件
 theme 修改为下载的第三方主题
 
-7.第三方主题配置不表
+#### 7.第三方主题配置不表
 
-8.常用命令
+#### 8.常用命令
 
 启动本地服务器
-hexo s
+`hexo s`
 
 清除缓存文件 db.json 和已生成的静态文件 publi
-hexo clean
+`hexo clean`
 
 生成网站静态文件到默认设置的 public 文件夹
-hexo generate
+`hexo generate`
 
 上传至github gitee等
-hexo deployd
+`hexo deployd`
 
 一般简写
-hexo clean && hexo g && hexo d
+`hexo clean && hexo g`
+
+`hexo d`
